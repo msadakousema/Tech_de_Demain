@@ -1,0 +1,426 @@
+:root {
+  /* Contact form specific variables */
+  --form-glow-1: linear-gradient(45deg, var(--button), var(--button-hover));
+  --form-glow-2: linear-gradient(
+    45deg,
+    var(--button-hover),
+    var(--accent-secondary)
+  );
+  --form-bg: linear-gradient(
+    160deg,
+    rgba(var(--button), 0.15) 0%,
+    rgba(var(--button-hover), 0.1) 100%
+  );
+  --input-border: var(--card-border);
+  --input-bg: linear-gradient(
+    135deg,
+    rgba(13, 17, 23, 0.85) 0%,
+    rgba(25, 32, 71, 0.85) 100%
+  );
+  --label-bg: rgba(26, 37, 47, 1);
+  --label-color: rgba(var(--text-primary), 0.6);
+  --typing-dot-color: linear-gradient(
+    45deg,
+    var(--button),
+    var(--button-hover)
+  );
+  --input-highlight: rgba(255, 255, 255, 0.15);
+  --input-shadow: rgba(0, 0, 0, 0.25);
+  --input-border-glow: rgba(255, 255, 255, 0.1);
+  --login-shadow: 15px 15px 35px rgba(2, 2, 4, 0.6),
+    -15px -15px 35px rgba(22, 20, 50, 0.923);
+}
+
+.lightmode {
+  --form-glow-1: linear-gradient(45deg, var(--accent-primary), var(--button));
+  --form-glow-2: linear-gradient(45deg, var(--button), var(--accent-secondary));
+  --form-bg: linear-gradient(
+    160deg,
+    rgba(var(--accent-primary), 0.15) 0%,
+    rgba(var(--accent-secondary), 0.1) 100%
+  );
+  --input-border: rgba(26, 37, 47, 0.3);
+  --typing-dot-color: var(--button);
+  --label-bg: #e8eef5;
+  --input-bg: linear-gradient(
+    135deg,
+    rgba(235, 240, 250, 0.85) 50%,
+    rgba(200, 215, 255, 0.4) 100%
+  );
+  --input-highlight: rgba(255, 255, 255, 0.3);
+  --input-shadow: rgba(0, 0, 0, 0.1);
+  --input-border-glow: rgba(255, 255, 255, 0.25);
+  --login-shadow: 15px 15px 35px #dddddf, -15px -15px 35px #fff;
+}
+* {
+  transition: all 0.3s ease;
+}
+.login .hero {
+  width: 100%;
+  border-radius: 2rem;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100svh;
+  width: 100%;
+}
+
+.login {
+  position: relative;
+  width: min(90%, 450px);
+  min-height: min(85vh, 550px);
+  max-width: 100%;
+  background: var(--bg-primary);
+  border-radius: 2rem;
+  overflow: hidden;
+  z-index: 2;
+  box-shadow: var(--login-shadow);
+}
+
+.glow {
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  background: var(--form-glow-1);
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.6;
+}
+
+.glow-2 {
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  background: var(--form-glow-2);
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.6;
+}
+
+.form-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: clamp(24px, 5vw, 32px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  z-index: 1;
+}
+
+.heading {
+  color: var(--text-primary);
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-shadow: 0 0 10px rgba(138, 43, 226, 0.3);
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  color: var(--text-primary);
+  border: none;
+  border-bottom: 2px solid var(--input-border);
+  outline: none;
+  background: transparent;
+  transition: 0.3s ease;
+}
+
+.input-group::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--form-glow-1);
+  transition: width 0.3s ease-in-out;
+}
+
+.input-group:focus-within::after,
+.input-group:has(input:valid)::after {
+  width: 100%;
+}
+
+.input-group::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--form-bg);
+  z-index: -2;
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: bottom center;
+  border-radius: 10px 10px 0 0;
+  transition: all 0.32s ease;
+  box-shadow: inset 0 12px 8px -10px var(--input-highlight),
+    inset 0 -8px 8px -10px var(--input-shadow), 0 2px 4px var(--input-shadow),
+    inset 1px 0 var(--input-border-glow), inset -1px 0 var(--input-border-glow);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--input-border-glow);
+  border-bottom: none;
+}
+
+.input-group:focus-within::before,
+.input-group:has(input:valid)::before {
+  transform: scaleY(1);
+  opacity: 1;
+}
+
+.input-group label {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  color: var(--label-color);
+  font-size: 1rem;
+  pointer-events: none;
+  transition: all 0.4s var ease-in;
+}
+
+.input-group :focus + label,
+.input-group input:valid + label {
+  top: -20px;
+  left: 0;
+  color: var(--accent-secondary);
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.lightmode .input-group :focus + label,
+.lightmode .input-group input:valid + label {
+  color: var(--accent-primary);
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  color: #555;
+  font-size: 1.1rem;
+  filter: drop-shadow(0 0 5px var(--button-hover-transparent));
+  transform: translateY(-50%);
+}
+
+.shape {
+  position: absolute;
+  background: var(--form-glow-1);
+  opacity: 0.1;
+  pointer-events: none;
+  animation: float 8s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(10deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+}
+
+.shape-1 {
+  top: 20%;
+  left: 15%;
+  width: 80px;
+  height: 80px;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation-delay: 0s;
+}
+
+.shape-2 {
+  bottom: 18%;
+  right: 15%;
+  width: 70px;
+  height: 70px;
+  border-radius: 58% 42% 33% 67% / 47% 30% 70% 53%;
+  animation-delay: 2s;
+}
+
+.shape-3 {
+  top: 18%; /* Changed from 60% to 35% to move it higher */
+  right: 15%; /* Slightly adjusted from 10% to 15% */
+  width: 50px;
+  height: 50px;
+  border-radius: 41% 59% 37% 63% / 57% 44% 56% 43%;
+  animation-delay: 4s;
+}
+/* Enhanced Textarea Styling */
+.textarea-container {
+  position: relative;
+  margin-top: 10px;
+}
+
+.textarea-container textarea {
+  width: 100%;
+  height: 120px;
+  min-height: unset;
+  background: var(--input-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--input-border);
+  border-radius: 12px;
+  padding: 15px;
+  font-size: 15px;
+  transition: all var(--transition-speed) var(--transition-timing);
+  outline: none;
+  resize: none;
+  font-family: inherit;
+  line-height: 1.6;
+  scrollbar-width: thin;
+  scrollbar-color: var(--button) transparent;
+  transition: 0.3s ease-out;
+}
+
+/* Webkit scrollbar styling */
+.textarea-container textarea::-webkit-scrollbar {
+  width: 8px;
+}
+
+.textarea-container textarea::-webkit-scrollbar-track {
+  background: var(--input-bg);
+  border-radius: 6px;
+}
+
+.textarea-container textarea::-webkit-scrollbar-thumb {
+  background: var(--button);
+  border-radius: 6px;
+  border: 2px solid var(--input-bg);
+}
+
+.textarea-container textarea::-webkit-scrollbar-thumb:hover {
+  background: var(--button-hover);
+}
+
+.textarea-container textarea:focus {
+  border-color: var(--button);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.textarea-container .textarea-label {
+  position: absolute;
+  border-radius: 4px;
+  top: 15px;
+  left: 15px;
+  color: var(--label-color);
+  pointer-events: none;
+  transition: 0.35s ease-in-out;
+}
+
+.textarea-container textarea:focus ~ .textarea-label,
+.textarea-container textarea:not(:placeholder-shown) ~ .textarea-label {
+  top: -10px;
+  left: 10px;
+  background-color: var(--label-bg);
+  padding: 4px;
+  font-size: 12px;
+  color: var(--accent-secondary);
+}
+
+.textarea-container .animated-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: var(--form-glow-1);
+  transition: width 0.3s ease;
+}
+
+.textarea-container textarea:focus ~ .animated-line {
+  width: 100%;
+}
+
+.textarea-container .counter {
+  position: absolute;
+  bottom: 12px;
+  right: 10px;
+  font-size: 12px;
+  color: var(--label-color);
+  background: var(--label-bg);
+  padding: 2px 5px;
+  border-radius: 4px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease-in;
+}
+
+.textarea-container textarea:focus ~ .counter {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.counter.warning {
+  color: var(--accent-primary);
+  background: rgba(255, 140, 66, 0.1);
+}
+
+.counter.error {
+  color: #ff4444;
+  background: rgba(255, 68, 68, 0.1);
+}
+
+.textarea-container .typing-indicator {
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity var(--transition-speed) var(--transition-timing);
+}
+
+.textarea-container textarea:focus ~ .typing-indicator {
+  opacity: 1;
+}
+
+.typing-indicator .dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--typing-dot-color);
+}
+
+.typing-indicator .dot:nth-child(1) {
+  animation: bounce 1.5s infinite 0s;
+}
+
+.typing-indicator .dot:nth-child(2) {
+  animation: bounce 1.5s infinite 0.2s;
+}
+
+.typing-indicator .dot:nth-child(3) {
+  animation: bounce 1.5s infinite 0.4s;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}

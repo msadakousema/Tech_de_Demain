@@ -1,0 +1,1975 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sujets de Projets</title>
+    <link rel="icon" href="Images/sujet.png" />
+    <link rel="stylesheet" href="CSS/styles.css" />
+    <link rel="stylesheet" href="CSS/sujets.css" />
+  </head>
+  <body>
+    <div id="loader">
+      <svg xmlns="http://www.w3.org/2000/svg" height="200px" width="200px" viewBox="0 0 200 200" class="pencil">
+        <defs>
+          <clipPath id="pencil-eraser">
+            <rect height="30" width="30" ry="5" rx="5"></rect>
+          </clipPath>
+        </defs>
+        <circle transform="rotate(-113,100,100)" stroke-linecap="round" stroke-dashoffset="439.82" stroke-dasharray="439.82 439.82" stroke-width="2" stroke="currentColor" fill="none" r="70" class="pencil__stroke"></circle>
+        <g transform="translate(100,100)" class="pencil__rotate">
+          <g fill="none">
+            <circle transform="rotate(-90)" stroke-dashoffset="402" stroke-dasharray="402.12 402.12" stroke-width="30" stroke="hsl(223,90%,50%)" r="64" class="pencil__body1"></circle>
+            <circle transform="rotate(-90)" stroke-dashoffset="465" stroke-dasharray="464.96 464.96" stroke-width="10" stroke="hsl(223,90%,60%)" r="74" class="pencil__body2"></circle>
+            <circle transform="rotate(-90)" stroke-dashoffset="339" stroke-dasharray="339.29 339.29" stroke-width="10" stroke="hsl(223,90%,40%)" r="54" class="pencil__body3"></circle>
+          </g>
+          <g transform="rotate(-90) translate(49,0)" class="pencil__eraser">
+            <g class="pencil__eraser-skew">
+              <rect height="30" width="30" ry="5" rx="5" fill="hsl(223,90%,70%)"></rect>
+              <rect clip-path="url(#pencil-eraser)" height="30" width="5" fill="hsl(223,90%,60%)"></rect>
+              <rect height="20" width="30" fill="hsl(223,10%,90%)"></rect>
+              <rect height="20" width="15" fill="hsl(223,10%,70%)"></rect>
+              <rect height="20" width="5" fill="hsl(223,10%,80%)"></rect>
+              <rect height="2" width="30" y="6" fill="hsla(223,10%,10%,0.2)"></rect>
+              <rect height="2" width="30" y="13" fill="hsla(223,10%,10%,0.2)"></rect>
+            </g>
+          </g>
+          <g transform="rotate(-90) translate(49,-30)" class="pencil__point">
+            <polygon points="15 0,30 30,0 30" fill="hsl(33,90%,70%)"></polygon>
+            <polygon points="15 0,6 30,0 30" fill="hsl(33,90%,50%)"></polygon>
+            <polygon points="15 0,20 10,10 10" fill="hsl(223,10%,10%)"></polygon>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <nav class="navbar">
+      <div class="nav-content">
+        <a href="#" class="logo">
+          <div class="logo-box">
+              <span>IG²</span>
+          </div>
+          <span>InfoGen</span><sup>²</sup>
+      </a>
+        <section class="nav-links">
+          <div class="nav-icons">
+            <a href="index.html">
+              <div class="animated">
+                <div class="fill-up">
+                  <div class="account">
+                    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 64 64" width="96px" height="96px">
+                      <path d="M 32 8 C 31.08875 8 30.178047 8.3091875 29.435547 8.9296875 L 8.8007812 26.171875 C
+                      8.0357812 26.810875 7.7634844 27.925203 8.2714844 28.783203 C 8.9184844 29.875203 10.35025 30.088547
+                       11.28125 29.310547 L 31.677734 12.269531 C 31.864734 12.113531 32.135266 12.113531 32.322266
+                        12.269531 L 52.71875 29.3125 C 53.09275 29.6255 53.546047 29.777344 53.998047 29.777344
+                        C 54.693047 29.777344 55.382672 29.416656 55.763672 28.722656 C 56.228672 27.874656 55.954891
+                        26.803594 55.212891 26.183594 L 52 23.498047 L 52 15 C 52 13.895 51.105 13 50 13 L 48 13 C 46.895
+                        13 46 13.895 46 15 L 46 18.484375 L 34.564453 8.9296875 C 33.821953 8.3091875 32.91125 8 32 8 z
+                         M 32 16 L 12 32.705078 L 12 47 C 12 49.761 14.239 52 17 52 L 47 52 C 49.761 52 52 49.761 52 47
+                         L 52 32.705078 L 32 16 z M 28 32 L 36 32 C 37.105 32 38 32.895 38 34 L 38 48 L 26 48 L 26 34 C
+                         26 32.895 26.895 32 28 32 z"/></svg>
+                    </svg>
+                    <p class="text">Accueil</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="Sujets.html">
+              <div class="animated">
+                <div class="fill-up">
+                  <div class="account">
+                    <svg class="stroke" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open h-4 w-4 mr-2" data-lov-id="src/components/Navbar.tsx:68:14" data-lov-name="BookOpen" data-component-path="src/components/Navbar.tsx" data-component-line="68" data-component-file="Navbar.tsx" data-component-name="BookOpen" data-component-content="%7B%22className%22%3A%22h-4%20w-4%20mr-2%22%7D"><path d="M12 7v14"></path><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path></svg>
+                    <p class="text">Sujets</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="Contact.html">
+              <div class="animated">
+                <div class="fill-up">
+                  <div class="account">
+                    <svg class="stroke" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail h-4 w-4 mr-2" data-lov-id="src/components/Navbar.tsx:79:14" data-lov-name="Mail" data-component-path="src/components/Navbar.tsx" data-component-line="79" data-component-file="Navbar.tsx" data-component-name="Mail" data-component-content="%7B%22className%22%3A%22h-4%20w-4%20mr-2%22%7D"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                    <p class="text">Contact</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="side-nav">
+              <div>
+                <button class="switch" id="theme-toggle" aria-label="Toggle theme">
+                  <div class="circle"></div>
+                  <svg class="moon svg" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"></path>
+                  </svg>
+                  <div class="sun svg">
+                    <span class="dot"></span>
+                  </div>
+                </button>
+              </div>
+              <button class="toggle" aria-label="Toggle menu">
+                <div class="bars" id="bar1"></div>
+                <div class="bars" id="bar2"></div>
+                <div class="bars" id="bar3"></div>
+              </button>
+            </div>
+      </div>
+    </nav>
+    <!-- Main Content -->
+    <main>
+      <div class="intro">
+        <div class="intro-content">
+          <h1 class="intro-title">Explorer les sujets</h1>
+          <p class="intro-text">
+            Découvrez des thématiques variées couvrant l’évolution du numérique,
+             l’intelligence artificielle, la cybersécurité, le développement web, les réseaux, et bien plus encore.
+             Ces sujets offrent un regard approfondi sur les tendances et innovations qui transforment notre quotidien et nos métiers. 
+          </p>
+        </div>
+      </div>
+
+      <section class="search-container">
+        <label class="search-wrapper">
+          <input 
+            type="text" 
+            class="search-input" 
+            placeholder="Rechercher un sujet..." 
+            aria-label="Search projects"
+            id="search-input"
+          >
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </label>
+      </section>
+
+      <!-- Filter Header Section -->
+      <div class="filter-header-container">
+        <div class="filter-header">
+          <div class="flex">
+            <div id="filter-icon">
+              <svg
+              class="stroke"
+                preserveAspectRatio="none"
+                height="27"
+                width="27"
+                viewBox="4.8 4.56 14.832 15.408"
+                fill="none"
+              >
+                <path
+                  d="M8.16 6.65002H15.83C16.47 6.65002 16.99 7.17002 16.99 7.81002V9.09002C16.99 9.56002 16.7 10.14 16.41 10.43L13.91 12.64C13.56 12.93 13.33 13.51 13.33 13.98V16.48C13.33 16.83 13.1 17.29 12.81 17.47L12 17.98C11.24 18.45 10.2 17.92 10.2 16.99V13.91C10.2 13.5 9.97 12.98 9.73 12.69L7.52 10.36C7.23 10.08 7 9.55002 7 9.20002V7.87002C7 7.17002 7.52 6.65002 8.16 6.65002Z"
+                  stroke-width="1"
+                  stroke-miterlimit="10"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+              </div>
+            <h2 class="filter-title">Filtrer par thème</h2>
+            <span class="project-count">31 projets</span> 
+          </div>
+          <button class="reset-filter" aria-label="Reset filters">Réinitialiser</button>
+        </div>
+      </div>
+      <!-- Filter Section -->
+      <div class="filters">
+
+        <div class="filter-container">
+          <button class="filter-btn active" data-filter="all">Tous les sujets</button>
+          <button class="filter-btn" data-filter="ai">IA & Robotique</button>
+          <button class="filter-btn" data-filter="web">Réseaux & Web</button>
+          <button class="filter-btn" data-filter="cyber">Cybersécurité</button>
+          <button class="filter-btn" data-filter="sys">Systèmes</button>
+          <button class="filter-btn" data-filter="robot">Robotique & IoT</button>
+          <button class="filter-btn" data-filter="career">Carrière</button>
+          <button class="filter-btn" data-filter="course">Cours</button>
+        </div>
+      </div>
+
+      <section id="cards" class="cards-section">
+        <div class="card-container">
+          <div class="card" data-filter="ai">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 1"
+                class="active"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 3"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+                alt="Image 4"
+              />
+              <button class="image-nav prev-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="image-nav next-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-footer">
+              <div class="text-content">
+                <div class="card-header">
+                  <h2> La révolution de l'intelligence artificielle et son impact sur l'avenir des médias et de la programmation </h2>
+                  <div class="tag">#1</div>
+                </div>
+                <p>
+                  Comment l’intelligence artificielle va-t-elle remodeler la programmation et les technologies de l’information à l’avenir ?
+                </p>
+              </div>
+              <div class="btn-container">
+                <button class="hero">En Savoir Plus</button>
+              </div>
+            </div>
+          </div>
+  
+          <div class="card" data-filter="ai">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 1"
+                class="active"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 3"
+              />
+              <button class="image-nav prev-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="image-nav next-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-footer">
+              <div class="text-content">
+                <div class="card-header">
+                  <h2>Outils d’intelligence artificielle et exploitation optimale en programmation </h2>
+                  <div class="tag">#2</div>
+                </div>
+                <p>
+                  Explorez les outils d’IA les plus puissants et comment les exploiter
+                   pour améliorer la programmation et le développement de logiciels.
+                </p>
+              </div>
+              <div class="btn-container">
+                <button class="hero">En Savoir Plus</button>
+              </div>
+            </div>
+          </div>
+  
+          <div class="card" data-filter="ai">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 1"
+                class="active"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 3"
+              />
+              <button class="image-nav prev-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="image-nav next-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-footer">
+              <div class="text-content">
+                <div class="card-header">
+                  <h2>Python et sa relation avec l'intelligence artificielle </h2>
+                  <div class="tag">#3</div>
+                </div>
+                <p>
+                  Pourquoi Python est-il le langage privilégié pour développer des applications d’IA ?
+                </p>
+              </div>
+              <div class="btn-container">
+                <button class="hero">En Savoir Plus</button>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-filter="ai">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 1"
+                class="active"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 3"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+                alt="Image 4"
+              />
+              <button class="image-nav prev-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="image-nav next-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-footer">
+              <div class="text-content">
+                <div class="card-header">
+                  <h2>Comparaison entre les géants des applications d'IA </h2>
+                  <div class="tag">#4</div>
+                </div>
+                <p>
+                  Analyser les applications d’IA les plus importantes et comparer leurs fonctionnalités et leurs performances.
+                </p>
+              </div>
+              <div class="btn-container">
+                <button class="hero">En Savoir Plus</button>
+              </div>
+            </div>
+          </div>
+  
+          <div class="card" data-filter="ai">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 1"
+                class="active"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 3"
+              />
+              <button class="image-nav prev-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="image-nav next-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-footer">
+              <div class="text-content">
+                <div class="card-header">
+                  <h2>Préparation de projets technologiques utilisant des applications d’intelligence artificielle.  </h2>
+                  <div class="tag">#5</div>
+                </div>
+                <p>
+                  Comment l’intelligence artificielle aide-t-elle à transformer des idées en projets technologiques réussis ?
+                </p>
+              </div>
+              <div class="btn-container">
+                <button class="hero">En Savoir Plus</button>
+              </div>
+            </div>
+          </div>
+  
+          <div class="card" data-filter="ai">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 1"
+                class="active"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 3"
+              />
+              <button class="image-nav prev-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="image-nav next-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-footer">
+              <div class="text-content">
+                <div class="card-header">
+                  <h2>Plateformes éducatives pour la programmation, la robotique et les médias</h2>
+                  <div class="tag">#6</div>
+                </div>
+                <p>Explorez les plateformes éducatives les plus importantes qui vous aident à apprendre facilement
+                   la programmation et la robotique.</p>
+              </div>
+              <div class="btn-container">
+                <button class="hero">En Savoir Plus</button>
+              </div>
+            </div>
+          </div>
+  
+          <div class="card" data-filter="ai">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 1"
+                class="active"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 3"
+              />
+              <button class="image-nav prev-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="image-nav next-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-footer">
+              <div class="text-content">
+                <div class="card-header">
+                  <h2> L’auto-apprentissage,
+                     ses avantages et des exemples de plateformes éducatives et de chaînes YouTube.</h2>
+                  <div class="tag">#7</div>
+                </div>
+                <p>Comment l’auto-apprentissage aide-t-il à développer les compétences en programmation ?
+                   Un aperçu des meilleures plateformes disponibles.</p>
+              </div>
+              <div class="btn-container">
+                <button class="hero">En Savoir Plus</button>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-filter="web">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 1"
+                class="active"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 3"
+              />
+              <button class="image-nav prev-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="image-nav next-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-footer">
+              <div class="text-content">
+                <div class="card-header">
+                  <h2>Réseaux médiatiques</h2>
+                  <div class="tag">#8</div>
+                </div>
+                <p>Comment fonctionnent les réseaux médiatiques et quel est leur rôle
+                   pour faciliter la communication numérique ?</p>
+              </div>
+              <div class="btn-container">
+                <button class="hero">En Savoir Plus</button>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-filter="web">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 1"
+                class="active"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 3"
+              />
+              <button class="image-nav prev-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="image-nav next-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-footer">
+              <div class="text-content">
+                <div class="card-header">
+                  <h2>L'évolution des réseaux mobiles : de la 3G à la 6G</h2>
+                  <div class="tag">#9</div>
+                </div>
+                <p>Comment fonctionnent les réseaux médiatiques et quel est leur rôle
+                   pour faciliter la communication numérique ?</p>
+              </div>
+              <div class="btn-container">
+                <button class="hero">En Savoir Plus</button>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-filter="web">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 1"
+                class="active"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 3"
+              />
+              <button class="image-nav prev-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="image-nav next-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-footer">
+              <div class="text-content">
+                <div class="card-header">
+                  <h2>Développement de sites Web. Outils</h2>
+                  <div class="tag">#10</div>
+                </div>
+                <p> Quels sont les outils de base dont vous avez besoin pour créer un site Web professionnel ?</p>
+              </div>
+              <div class="btn-container">
+                <button class="hero">En Savoir Plus</button>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-filter="web">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 1"
+                class="active"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 3"
+              />
+              <button class="image-nav prev-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="image-nav next-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-footer">
+              <div class="text-content">
+                <div class="card-header">
+                  <h2>Développement d'applications mobiles</h2>
+                  <div class="tag">#11</div>
+                </div>
+                <p>Comment sont développées les applications pour smartphone et quels outils sont utilisés ?</p>
+              </div>
+              <div class="btn-container">
+                <button class="hero">En Savoir Plus</button>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-filter="web">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 1"
+                class="active"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 3"
+              />
+              <button class="image-nav prev-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="image-nav next-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-footer">
+              <div class="text-content">
+                <div class="card-header">
+                  <h2>Stockage dans le cloud</h2>
+                  <div class="tag">#12</div>
+                </div>
+                <p>Comment le stockage cloud a-t-il changé la façon dont nous stockons 
+                  et partageons des données en ligne ?</p>
+              </div>
+              <div class="btn-container">
+                <button class="hero">En Savoir Plus</button>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-filter="web">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 1"
+                class="active"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 3"
+              />
+              <button class="image-nav prev-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="image-nav next-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-footer">
+              <div class="text-content">
+                <div class="card-header">
+                  <h2>Les réseaux sociaux. Avantages et inconvénients</h2>
+                  <div class="tag">#13</div>
+                </div>
+                <p>Comment les réseaux sociaux affectent-ils notre vie quotidienne ? Entre bénéfices et risques.
+                </p>
+              </div>
+              <div class="btn-container">
+                <button class="hero">En Savoir Plus</button>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-filter="cyber">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 1"
+                class="active"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 3"
+              />
+              <button class="image-nav prev-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="image-nav next-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-footer">
+              <div class="text-content">
+                <div class="card-header">
+                  <h2>Sécurité de l’information pour l’utilisateur moyen. Son importance et ses outils</h2>
+                  <div class="tag">#14</div>
+                </div>
+                <p>Comment protéger vos données personnelles et rester en sécurité en ligne ?
+                </p>
+              </div>
+              <div class="btn-container">
+                <button class="hero">En Savoir Plus</button>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-filter="cyber">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 1"
+                class="active"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 3"
+              />
+              <button class="image-nav prev-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="image-nav next-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-footer">
+              <div class="text-content">
+                <div class="card-header">
+                  <h2>Vérifiez les fausses nouvelles.
+                     Les outils et applications les plus importants</h2>
+                  <div class="tag">#15</div>
+                </div>
+                <p>Comment repérer les "fake news" ? Un aperçu des outils qui aident à vérifier les informations. </p>
+              </div>
+              <div class="btn-container">
+                <button class="hero">En Savoir Plus</button>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-filter="cyber">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 1"
+                class="active"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto=format&fit=crop"
+                alt="Image 3"
+              />
+              <button class="image-nav prev-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="image-nav next-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-footer">
+              <div class="text-content">
+                <div class="card-header">
+                  <h2>Piratage éthique.
+                     Qu'est-ce que c'est? Quels sont ses objectifs ? et ses outils</h2>
+                  <div class="tag">#16</div>
+                </div>
+                <p>Comment le piratage éthique est-il utilisé
+                   pour améliorer la cybersécurité et la protection des données ? </p>
+              </div>
+              <div class="btn-container">
+                <button class="hero">En Savoir Plus</button>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-filter="cyber">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 1"
+                class="active"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 3"
+              />
+              <button class="image-nav prev-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="image-nav next-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-footer">
+              <div class="text-content">
+                <div class="card-header">
+                  <h2>Dépendance numérique. Ses manifestations et ses méthodes de traitement</h2>
+                  <div class="tag">#17</div>
+                </div>
+                <p> La technologie est-elle devenue une addiction ?
+                   Apprenez-en davantage sur ses symptômes
+                   et les moyens de le contrôler. </p>
+              </div>
+              <div class="btn-container">
+                <button class="hero">En Savoir Plus</button>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-filter="cyber">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 1"
+                class="active"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 3"
+              />
+              <button class="image-nav prev-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="image-nav next-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-footer">
+              <div class="text-content">
+                <div class="card-header">
+                  <h2>Crypto-monnaies</h2>
+                  <div class="tag">#18</div>
+                </div>
+                <p>Comment fonctionnent les crypto-monnaies et quel est leur avenir 
+                  dans l’économie mondiale ?
+                   et les moyens de le contrôler. </p>
+              </div>
+              <div class="btn-container">
+                <button class="hero">En Savoir Plus</button>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-filter="sys">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 1"
+                class="active"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 3"
+              />
+              <button class="image-nav prev-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="image-nav next-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-footer">
+              <div class="text-content">
+                <div class="card-header">
+                  <h2>Système d'exploitation Linux. Son importance et une étude comparative avec Windows</h2>
+                  <div class="tag">#19</div>
+                </div>
+                <p>Pourquoi certains développeurs préfèrent Linux à Windows ?
+                   Comparaison entre les deux systèmes. </p>
+              </div>
+              <div class="btn-container">
+                <button class="hero">En Savoir Plus</button>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-filter="sys">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 1"
+                class="active"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 3"
+              />
+              <button class="image-nav prev-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="image-nav next-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-footer">
+              <div class="text-content">
+                <div class="card-header">
+                  <h2>Maintenance informatique. Équipements et applications</h2>
+                  <div class="tag">#20</div>
+                </div>
+                <p>Comment entretenir son ordinateur pour améliorer 
+                  ses performances et prolonger sa durée de vie ? </p>
+              </div>
+              <div class="btn-container">
+                <button class="hero">En Savoir Plus</button>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-filter="sys">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 1"
+                class="active"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 3"
+              />
+              <button class="image-nav prev-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="image-nav next-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-footer">
+              <div class="text-content">
+                <div class="card-header">
+                  <h2>Une étude comparative entre différents langages de programmation</h2>
+                  <div class="tag">#21</div>
+                </div>
+                <p>Quels sont les meilleurs langages de programmation et pourquoi
+                   diffèrent-ils dans leur utilisation ? </p>
+              </div>
+              <div class="btn-container">
+                <button class="hero">En Savoir Plus</button>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-filter="sys">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 1"
+                class="active"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 3"
+              />
+              <button class="image-nav prev-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="image-nav next-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-footer">
+              <div class="text-content">
+                <div class="card-header">
+                  <h2>Dernières évolutions en matière d'appareils intelligents</h2>
+                  <div class="tag">#22</div>
+                </div>
+                <p>Quoi de neuf dans le monde des appareils intelligents et comment affectent-ils 
+                  notre vie quotidienne ?</p>
+              </div>
+              <div class="btn-container">
+                <button class="hero">En Savoir Plus</button>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-filter="robot">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 1"
+                class="active"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 3"
+              />
+              <button class="image-nav prev-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="image-nav next-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-footer">
+              <div class="text-content">
+                <div class="card-header">
+                  <h2> L'Internet des objets et sa relation avec le langage de programmation Python</h2>
+                  <div class="tag">#23</div>
+                </div>
+                <p>Comment Python est-il utilisé dans le développement de projets IoT ?</p>
+              </div>
+              <div class="btn-container">
+                <button class="hero">En Savoir Plus</button>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-filter="robot">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 1"
+                class="active"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 3"
+              />
+              <button class="image-nav prev-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="image-nav next-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-footer">
+              <div class="text-content">
+                <div class="card-header">
+                  <h2>Les derniers développements dans l'industrie robotique</h2>
+                  <div class="tag">#24</div>
+                </div>
+                <p> Comment évoluent les robots et quel est leur avenir dans différents domaines ?</p>
+              </div>
+              <div class="btn-container">
+                <button class="hero">En Savoir Plus</button>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-filter="robot">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 1"
+                class="active"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 3"
+              />
+              <button class="image-nav prev-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="image-nav next-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-footer">
+              <div class="text-content">
+                <div class="card-header">
+                  <h2>Résumé d'un film sur la programmation, la robotique et l'intelligence artificielle</h2>
+                  <div class="tag">#25</div>
+                </div>
+                <p>Découvrez comment les films de science-fiction reflètent les développements
+                   de l’intelligence artificielle et de la robotique.</p>
+              </div>
+              <div class="btn-container">
+                <button class="hero">En Savoir Plus</button>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-filter="career">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 1"
+                class="active"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 3"
+              />
+              <button class="image-nav prev-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="image-nav next-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-footer">
+              <div class="text-content">
+                <div class="card-header">
+                  <h2>Métiers des médias</h2>
+                  <div class="tag">#26</div>
+                </div>
+                <p>Quels sont les métiers les plus importants dans le domaine des médias et comment choisir
+                   la voie qui vous convient ?</p>
+              </div>
+              <div class="btn-container">
+                <button class="hero">En Savoir Plus</button>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-filter="career">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 1"
+                class="active"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 3"
+              />
+              <button class="image-nav prev-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="image-nav next-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-footer">
+              <div class="text-content">
+                <div class="card-header">
+                  <h2>Orientation universitaire pour les étudiants du Département des Sciences de l'Information</h2>
+                  <div class="tag">#27</div>
+                </div>
+                <p>Comment choisir la spécialisation universitaire appropriée après
+                   le département des sciences des médias ?</p>
+              </div>
+              <div class="btn-container">
+                <button class="hero">En Savoir Plus</button>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-filter="career">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 1"
+                class="active"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 3"
+              />
+              <button class="image-nav prev-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="image-nav next-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-footer">
+              <div class="text-content">
+                <div class="card-header">
+                  <h2>Free-lance Comment démarrer ?</h2>
+                  <div class="tag">#28</div>
+                </div>
+                <p>Comment choisir la spécialisation universitaire appropriée après
+                   le département des sciences des médias ?</p>
+              </div>
+              <div class="btn-container">
+                <button class="hero">En Savoir Plus</button>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-filter="course">
+            <div class="image-container">
+              <img
+                src="Images/Page en  CSS.png"
+                alt="Page en CSS"
+                class="active"
+              />
+              <img
+                src="Images/CSS code.jpeg"
+                alt="Code CSS"
+              />
+              <img
+                src="Images/Model.png"
+                alt="Modèle de boite en CSS"
+              />
+              <button class="image-nav prev-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="image-nav next-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+            <a href="Les projet/css-presentation.html" class="card-footer">
+              <div class="text-content">
+                <div class="card-header">
+                  <h2>Présentation de la leçon CSS </h2>
+                  <div class="tag">#29</div>
+                </div>
+                <p>Comprendre les bases du CSS et son rôle dans la mise en forme
+                   et la conception des pages Web.</p>
+              </div>
+              <div class="btn-container">
+                <button class="hero">En Savoir Plus</button>
+              </div>
+            </a>
+          </div>
+          <div class="card" data-filter="course">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 1"
+                class="active"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 3"
+              />
+              <button class="image-nav prev-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="image-nav next-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-footer">
+              <div class="text-content">
+                <div class="card-header">
+                  <h2>Jeux électroniques. Ses types, ses risques et comment le fabriquer</h2>
+                  <div class="tag">#30</div>
+                </div>
+                <p>Comment sont créés les jeux vidéo et quels sont leurs effets positifs et négatifs ?</p>
+              </div>
+              <div class="btn-container">
+                <button class="hero">En Savoir Plus</button>
+              </div>
+            </div>
+          </div>
+          <div class="card" data-filter="course">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 1"
+                class="active"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 2"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?q=80&w=1000&auto-format&fit=crop"
+                alt="Image 3"
+              />
+              <button class="image-nav prev-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <button class="image-nav next-btn">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+            <div class="card-footer">
+              <div class="text-content">
+                <div class="card-header">
+                  <h2>L'histoire des médias et des ordinateurs et le développement dont ils ont été témoins</h2>
+                  <div class="tag">#31</div>
+                </div>
+                <p>Comment a commencé l’histoire de l’informatique et quelles sont les étapes
+                   les plus importantes qu’elle a traversées ?</p>
+              </div>
+              <div class="btn-container">
+                <button class="hero">En Savoir Plus</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <header>
+          <a href="#" class="logo">
+            <div class="logo-box">
+                <span>IG²</span>
+            </div>
+            <span>InfoGen</span><sup>²</sup>
+          </a>
+        </header>
+        <div>
+          <div class="footer-section">
+            <h3>À Propos</h3>
+            <p>InfoGen² – Un projet des élèves de 2ᵉ année informatique explorant l'IA, la cybersécurité et la programmation... 🚀</p>
+          </div>
+          <div class="footer-section">
+            <h3>Liens Rapides</h3>
+            <ul>
+              <li><a href="index.html">Accueil</a></li>
+              <li><a href="Sujets.html">Sujets</a></li>
+              <li><a href="Contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Contact</h3>
+            <ul>
+              <li><a href="Contact.html" class="flex">
+                <svg class="stroke" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail h-4 w-4 mr-2" data-lov-id="src/components/Navbar.tsx:79:14" data-lov-name="Mail" data-component-path="src/components/Navbar.tsx" data-component-line="79" data-component-file="Navbar.tsx" data-component-name="Mail" data-component-content="%7B%22className%22%3A%22h-4%20w-4%20mr-2%22%7D"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                Contactez-nous
+              </a></li>
+              <li>Email : contact@infogen.com</li>
+              <li>Téléphone : +216 99 888 777</li>
+              <li>Localisation : Sousse, Tunisie</li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Suivez-nous</h3>
+            <div class="other-method">
+              <div class="social-link">
+                <a href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 48 48"
+                    width="48px"
+                    height="48px"
+                  >
+                    <path
+                      d="M23 21.5v5c0 .828.671 1.5 1.5 1.5h10.809c-.499 1.416-1.256 2.698-2.205 3.805l6.033 5.229C42.159 33.529 44 28.98 44 24c0-.828-.064-1.688-.202-2.702C43.697 20.555 43.062 20 42.312 20H24.5C23.671 20 23 20.672 23 21.5zM12.612 27.761C12.22 26.577 12 25.314 12 24s.22-2.577.612-3.761l-6.557-5.014C4.752 17.878 4 20.849 4 24s.752 6.122 2.056 8.775L12.612 27.761zM30.865 33.835C28.906 35.204 26.532 36 24 36c-4.212 0-7.917-2.186-10.059-5.478l-6.362 4.865C11.195 40.585 17.202 44 24 44c4.968 0 9.508-1.832 13.009-4.84L30.865 33.835zM37.515 9.297C33.813 5.881 29.013 4 24 4c-6.798 0-12.805 3.415-16.421 8.614l6.362 4.865C16.083 14.186 19.788 12 24 12c2.944 0 5.776 1.081 7.974 3.043.593.53 1.498.504 2.06-.059l3.525-3.524c.289-.288.447-.683.439-1.091C37.99 9.961 37.815 9.574 37.515 9.297z"
+                    ></path>
+                  </svg>
+                </a>
+                <span class="floating-text">Google</span>
+              </div>
+              <div class="social-link">
+                <a href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 50 50"
+                    width="50px"
+                    height="50px"
+                  >
+                    <path
+                      d="M 41.625 10.769531 C 37.644531 7.566406 31.347656 7.023438 31.078125 7.003906 C 30.660156 6.96875 30.261719 7.203125 30.089844 7.589844 C 30.074219 7.613281 29.9375 7.929688 29.785156 8.421875 C 32.417969 8.867188 35.652344 9.761719 38.578125 11.578125 C 39.046875 11.867188 39.191406 12.484375 38.902344 12.953125 C 38.710938 13.261719 38.386719 13.429688 38.050781 13.429688 C 37.871094 13.429688 37.6875 13.378906 37.523438 13.277344 C 32.492188 10.15625 26.210938 10 25 10 C 23.789063 10 17.503906 10.15625 12.476563 13.277344 C 12.007813 13.570313 11.390625 13.425781 11.101563 12.957031 C 10.808594 12.484375 10.953125 11.871094 11.421875 11.578125 C 14.347656 9.765625 17.582031 8.867188 20.214844 8.425781 C 20.0625 7.929688 19.925781 7.617188 19.914063 7.589844 C 19.738281 7.203125 19.34375 6.960938 18.921875 7.003906 C 18.652344 7.023438 12.355469 7.566406 8.320313 10.8125 C 6.214844 12.761719 2 24.152344 2 34 C 2 34.175781 2.046875 34.34375 2.132813 34.496094 C 5.039063 39.605469 12.972656 40.941406 14.78125 41 C 14.789063 41 14.800781 41 14.8125 41 C 15.132813 41 15.433594 40.847656 15.621094 40.589844 L 17.449219 38.074219 C 12.515625 36.800781 9.996094 34.636719 9.851563 34.507813 C 9.4375 34.144531 9.398438 33.511719 9.765625 33.097656 C 10.128906 32.683594 10.761719 32.644531 11.175781 33.007813 C 11.234375 33.0625 15.875 37 25 37 C 34.140625 37 38.78125 33.046875 38.828125 33.007813 C 39.242188 32.648438 39.871094 32.683594 40.238281 33.101563 C 40.601563 33.515625 40.5625 34.144531 40.148438 34.507813 C 40.003906 34.636719 37.484375 36.800781 32.550781 38.074219 L 34.378906 40.589844 C 34.566406 40.847656 34.867188 41 35.1875 41 C 35.199219 41 35.210938 41 35.21875 41 C 37.027344 40.941406 44.960938 39.605469 47.867188 34.496094 C 47.953125 34.34375 48 34.175781 48 34 C 48 24.152344 43.785156 12.761719 41.625 10.769531 Z M 18.5 30 C 16.566406 30 15 28.210938 15 26 C 15 23.789063 16.566406 22 18.5 22 C 20.433594 22 22 23.789063 22 26 C 22 28.210938 20.433594 30 18.5 30 Z M 31.5 30 C 29.566406 30 28 28.210938 28 26 C 28 23.789063 29.566406 22 31.5 22 C 33.433594 22 35 23.789063 35 26 C 35 28.210938 33.433594 30 31.5 30 Z"
+                    ></path>
+                  </svg>
+                </a>
+                <span class="floating-text">Discord</span>
+              </div>
+              <div class="social-link">
+                <a href="#">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
+                    <path
+                      d="M36,12c13.255,0,24,10.745,24,24c0,10.656-6.948,19.685-16.559,22.818c0.003-0.009,0.007-0.022,0.007-0.022	s-1.62-0.759-1.586-2.114c0.038-1.491,0-4.971,0-6.248c0-2.193-1.388-3.747-1.388-3.747s10.884,0.122,10.884-11.491	c0-4.481-2.342-6.812-2.342-6.812s1.23-4.784-0.426-6.812c-1.856-0.2-5.18,1.774-6.6,2.697c0,0-2.25-0.922-5.991-0.922	c-3.742,0-5.991,0.922-5.991,0.922c-1.419-0.922-4.744-2.897-6.6-2.697c-1.656,2.029-0.426,6.812-0.426,6.812	s-2.342,2.332-2.342,6.812c0,11.613,10.884,11.491,10.884,11.491s-1.097,1.239-1.336,3.061c-0.76,0.258-1.877,0.576-2.78,0.576	c-2.362,0-4.159-2.296-4.817-3.358c-0.649-1.048-1.98-1.927-3.221-1.927c-0.817,0-1.216,0.409-1.216,0.876s1.146,0.793,1.902,1.659	c1.594,1.826,1.565,5.933,7.245,5.933c0.617,0,1.876-0.152,2.823-0.279c-0.006,1.293-0.007,2.657,0.013,3.454	c0.034,1.355-1.586,2.114-1.586,2.114s0.004,0.013,0.007,0.022C18.948,55.685,12,46.656,12,36C12,22.745,22.745,12,36,12z"
+                    ></path>
+                  </svg>
+                </a>
+                <span class="floating-text">Github</span>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 InfoGen². Tous droits réservés.</p>
+      </div>
+    </footer>
+    <script src="Javascript/main.js"></script>
+    <script src="Javascript/carousel.js"></script>
+    <script src="Javascript/sujets.js"></script>
+  </body>
+</html>

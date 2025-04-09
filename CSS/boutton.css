@@ -1,0 +1,123 @@
+@property --fill {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+.btn-download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-table-odd-row); /* Fallback color */
+  gap: 10px;
+  padding: 0.7rem;
+  border-radius: 2rem;
+  margin: 0.5rem;
+  border: 2px solid var(--button-border);
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.85, 0.46, 0.38, 1.2);
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  background-image: conic-gradient(
+    var(--accent-secondary) var(--fill),
+    transparent 0deg
+  );
+  text-decoration: none; /* remove underline from the link */
+  background-size: 200% 200%;
+  background-position: right bottom;
+  transition: background-position 0.5s ease-out;
+  width: fit-content; /* Adjust width to content */
+}
+
+.btn-text {
+  display: inline-block;
+  color: var(--text-primary);
+  font-weight: bold;
+  font-size: 1.15rem;
+  z-index: 10;
+  transition: all 0.4s cubic-bezier(0.85, 0.46, 0.38, 1.2);
+}
+
+.btn-download svg {
+  width: 32px;
+  height: 32px;
+  stroke: var(--text-primary);
+  z-index: 10;
+  transition: all 0.5s cubic-bezier(0.6, 0.16, 0.39, 1.08);
+}
+
+.btn-download::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  filter: blur(8px);
+  z-index: 0;
+  transition: all 0.5s cubic-bezier(0.57, 0.16, 0.39, 1.08);
+}
+
+.btn-download.downloading {
+  gap: 0;
+  pointer-events: none;
+  box-shadow: none;
+  background-position: left bottom;
+}
+
+.btn-download.downloading .btn-text {
+  font-size: 0;
+}
+
+.btn-download.downloading svg {
+  width: 36px;
+  height: 36px;
+  stroke: var(--accent-secondary);
+}
+
+.btn-download.downloading::before {
+  transform: scale(1.1);
+  filter: blur(0);
+  transform: translate(-50%, -50%);
+}
+
+@keyframes fillAnimation {
+  0% {
+    --fill: 0%;
+  }
+  100% {
+    --fill: 100%;
+  }
+}
+
+.btn-download.downloading {
+  animation: fillAnimation 0.8s ease-in-out forwards; /* Shortened animation duration */
+}
+
+.btn-download.downloading {
+  border-radius: 50%;
+  gap: 0;
+  border: 0;
+  transform: scale(1.05);
+}
+
+.btn-download.downloading .btn-text {
+  font-size: 0;
+}
+.btn-download:hover {
+  transform: scale3d(1.09, 1.02, 1.07) rotateX(18deg);
+}
+.btn-download:active {
+  transform: scale(0.85) rotate(0deg);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-download:hover svg {
+  width: 36px;
+  height: 36px;
+  stroke: var(--accent-secondary);
+}
