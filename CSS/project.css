@@ -38,15 +38,6 @@
   margin-bottom: 0.5rem;
 }
 
-.project-subtitle {
-  font-size: 1.1rem;
-  color: var(--text-primary);
-  opacity: 0.9;
-  line-height: 1.5;
-  margin-bottom: 1rem;
-  font-weight: 600;
-}
-
 .metadata {
   display: flex;
   gap: 2rem;
@@ -117,9 +108,6 @@
   line-height: 1.6;
   color: var(--text-primary);
 }
-.Chapitres h2 {
-  color: var(--accent-primary);
-}
 
 .topics-grid {
   display: grid;
@@ -164,13 +152,13 @@
 
 .topic-card li::before {
   content: "";
-  background: linear-gradient(135deg, var(--button), var(--button-hover));
-  width: 0.36rem;
-  height: 0.36rem;
-  border-radius: 50%;
   position: absolute;
   left: 0;
   top: 50%;
+  background: linear-gradient(135deg, var(--button), var(--button-hover));
+  width: 0.44rem;
+  height: 0.44rem;
+  border-radius: 50%;
   transform: translateY(-50%);
   transition: 0.3s ease;
 }
@@ -508,7 +496,7 @@ tbody tr:nth-child(odd) td:not([rowspan]) {
   left: 0;
   right: 0;
   height: 2.5rem;
-  background: var(--bg-secondary);
+  background: var(--card-bg);
   border-bottom: 1px solid var(--card-border);
   border-radius: 1rem 1rem 0 0;
   display: flex;
@@ -596,7 +584,7 @@ tbody tr:nth-child(odd) td:not([rowspan]) {
 
 .url-input {
   flex: 1;
-  background: var(--card-bg);
+  background: var(--navbar-bg);
   border: 1px solid var(--card-border);
   border-radius: 0.5rem;
   padding: 0.25rem 1rem;
