@@ -279,7 +279,7 @@
 }
 
 .image:hover img {
-  transform: scale(1.05);
+  transform: scale(1.12);
   filter: brightness(1.05) contrast(1.05);
 }
 
@@ -636,34 +636,21 @@ tbody tr:nth-child(odd) td:not([rowspan]) {
   margin-top: 2.5rem;
   background: var(--bg-primary);
   transition: opacity 0.3s ease;
-}
-
-@media (max-width: 640px) {
-  .url-input {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.5rem;
-  }
-
-  .browser-dot {
-    width: 0.6rem;
-    height: 0.6rem;
-  }
-
-  .copy-button {
-    display: none;
-  }
-}
-
-/* Enhanced hover effects */
-.preview-container:hover {
-  transform: translateY(-5px) scale(1.01);
-  box-shadow: var(--shadow-lg);
+  -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
 }
 
 /* Enhanced responsive styles */
 @media (max-width: 768px) {
   .preview-container {
     aspect-ratio: 4/3;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+  }
+
+  .preview-container iframe {
+    height: 100%;
+    min-height: calc(100% - 2.5rem);
+    overflow-y: auto;
   }
 
   .topics-grid {
@@ -678,7 +665,8 @@ tbody tr:nth-child(odd) td:not([rowspan]) {
 
 @media (max-width: 480px) {
   .preview-container {
-    aspect-ratio: 1/1;
+    aspect-ratio: auto;
+    height: 80vh; /* Fixed height on mobile */
   }
 
   .metadata {
@@ -688,6 +676,12 @@ tbody tr:nth-child(odd) td:not([rowspan]) {
   .project-section {
     margin-bottom: 2rem;
   }
+}
+
+/* Enhanced hover effects */
+.preview-container:hover {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: var(--shadow-lg);
 }
 
 /* Add CSS-specific decorative elements */
@@ -771,4 +765,129 @@ tbody tr:nth-child(odd) td:not([rowspan]) {
   z-index: 1000;
   aspect-ratio: unset;
   transform: scale(1);
+}
+
+/*Boutton pour Télecharger les document (pdf , power point ...) */
+@property --fill {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 0%;
+}
+
+.btn-download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-table-odd-row); /* Fallback color */
+  gap: 10px;
+  width: fit-content; /* Adjust width to content */
+  padding: 0.7rem;
+  border-radius: 2rem;
+  margin: 0.5rem;
+  border: 2px solid var(--button-border);
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.85, 0.46, 0.38, 1.2);
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  background-image: conic-gradient(
+    var(--accent-secondary) var(--fill),
+    transparent 0deg
+  );
+  text-decoration: none; /* remove underline from the link */
+  background-size: 200% 200%;
+  background-position: right bottom;
+  transition: 0.54s ease-out;
+}
+
+.btn-text {
+  display: inline-block;
+  color: var(--text-primary);
+  font-weight: bold;
+  font-size: 1.15rem;
+  z-index: 10;
+  transition: all 0.54s cubic-bezier(0.85, 0.46, 0.38, 1.2);
+}
+
+.btn-download svg {
+  width: 32px;
+  height: 32px;
+  stroke: var(--text-primary);
+  z-index: 10;
+  transition: all 0.5s cubic-bezier(0.6, 0.16, 0.39, 1.08);
+}
+
+.btn-download::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  filter: blur(8px);
+  z-index: 0;
+  transition: all 0.5s cubic-bezier(0.57, 0.16, 0.39, 1.08);
+}
+
+.btn-download.downloading {
+  gap: 0;
+  pointer-events: none;
+  box-shadow: none;
+  background-position: left bottom;
+}
+
+.btn-download.downloading .btn-text {
+  font-size: 0;
+}
+
+.btn-download.downloading svg {
+  width: 36px;
+  height: 36px;
+  stroke: var(--accent-secondary);
+}
+
+.btn-download.downloading::before {
+  transform: scale(1.1);
+  filter: blur(0);
+  transform: translate(-50%, -50%);
+}
+
+@keyframes fillAnimation {
+  0% {
+    --fill: 0%;
+  }
+  100% {
+    --fill: 100%;
+  }
+}
+
+.btn-download.downloading {
+  animation: fillAnimation 0.8s ease-in-out forwards; /* Shortened animation duration */
+}
+
+.btn-download.downloading {
+  border-radius: 50%;
+  gap: 0;
+  border: 0;
+  transform: scale(1.05);
+}
+
+.btn-download.downloading .btn-text {
+  font-size: 0;
+}
+.btn-download:hover {
+  transform: scale3d(1.09, 1.02, 1.07) rotateX(18deg);
+}
+.btn-download:active {
+  transform: scale(0.85) rotate(0deg);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-download:hover svg {
+  width: 36px;
+  height: 36px;
+  stroke: var(--accent-secondary);
 }

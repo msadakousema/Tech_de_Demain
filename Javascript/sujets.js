@@ -1,11 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Page-specific elements
-  const filterBtns = document.querySelectorAll(".filter-btn");
-  const cards = document.querySelectorAll(".card");
-  const countLabel = document.querySelector(".project-count");
-  const searchInput = document.querySelector(".search-input");
-  const resetBtn = document.querySelector(".reset-filter");
-  const searchWrapper = document.querySelector(".search-wrapper");
+  // Cache DOM queries
+  const elements = {
+    filterBtns: document.querySelectorAll(".filter-btn"),
+    cards: document.querySelectorAll(".card"),
+    countLabel: document.querySelector(".project-count"),
+    searchInput: document.querySelector(".search-input"),
+    resetBtn: document.querySelector(".reset-filter"),
+    searchWrapper: document.querySelector(".search-wrapper"),
+  };
 
   // Add clear button
   const clearBtn = document.createElement("button");
@@ -13,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   clearBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
   </svg>`;
-  searchWrapper.appendChild(clearBtn);
+  elements.searchWrapper.appendChild(clearBtn);
 
   // Add keyboard shortcut hint
   const shortcutHint = document.createElement("span");
@@ -22,55 +24,64 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!navigator.platform.includes("Mac")) {
     shortcutHint.textContent = "Ctrl+K";
   }
-  searchWrapper.appendChild(shortcutHint);
+  elements.searchWrapper.appendChild(shortcutHint);
 
   // Clear search
   clearBtn.addEventListener("click", () => {
-    searchInput.value = "";
-    searchInput.focus();
+    elements.searchInput.value = "";
+    elements.searchInput.focus();
     handleSearchInput();
   });
 
-  // Handle search input
-  function handleSearchInput() {
-    const hasText = searchInput.value.length > 0;
-    searchWrapper.classList.toggle("has-text", hasText);
-    clearBtn.classList.toggle("visible", hasText);
-
-    let visibleCount = 0;
-    const searchTerm = searchInput.value.toLowerCase();
-
-    cards.forEach((card) => {
-      const text = card.textContent.toLowerCase();
-      const shouldShow = text.includes(searchTerm);
-
-      card.classList.toggle("filtered", !shouldShow);
-      if (shouldShow) visibleCount++;
-    });
-
-    updateCount(visibleCount);
+  // Debounce function
+  function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
   }
 
-  searchInput.addEventListener("input", handleSearchInput);
+  // Optimize search
+  const handleSearchInput = debounce(() => {
+    const searchTerm = elements.searchInput.value.toLowerCase();
+    let visibleCount = 0;
+
+    requestAnimationFrame(() => {
+      elements.cards.forEach((card) => {
+        const text = card.textContent.toLowerCase();
+        const shouldShow = text.includes(searchTerm);
+        card.classList.toggle("filtered", !shouldShow);
+        if (shouldShow) visibleCount++;
+      });
+      updateCount(visibleCount);
+    });
+  }, 150);
+
+  elements.searchInput.addEventListener("input", handleSearchInput);
 
   // Keyboard shortcuts
   document.addEventListener("keydown", (e) => {
     // Focus search with Cmd+K or Ctrl+K
     if ((e.metaKey || e.ctrlKey) && e.key === "k") {
       e.preventDefault();
-      searchInput.focus();
+      elements.searchInput.focus();
     }
 
     // Clear search with Escape
-    if (e.key === "Escape" && document.activeElement === searchInput) {
-      searchInput.value = "";
-      searchInput.blur();
+    if (e.key === "Escape" && document.activeElement === elements.searchInput) {
+      elements.searchInput.value = "";
+      elements.searchInput.blur();
       handleSearchInput();
     }
   });
 
   function updateCount(visibleCards) {
-    countLabel.textContent = `${visibleCards} projet${
+    elements.countLabel.textContent = `${visibleCards} projet${
       visibleCards > 1 ? "s" : ""
     }`;
   }
@@ -78,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function filterCards(filter) {
     let visibleCount = 0;
 
-    cards.forEach((card) => {
+    elements.cards.forEach((card) => {
       const cardFilter = card.dataset.filter;
       const shouldShow = filter === "all" || cardFilter === filter;
 
@@ -93,32 +104,68 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCount(visibleCount);
   }
 
-  filterBtns.forEach((btn) => {
+  // Add URL parameter handling
+  function getUrlParameter(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+  }
+
+  // Function to trigger filter button click
+  function triggerFilter(filterValue) {
+    const targetBtn = Array.from(elements.filterBtns).find(
+      (btn) => btn.dataset.filter === filterValue
+    );
+
+    if (targetBtn) {
+      elements.filterBtns.forEach((btn) => btn.classList.remove("active"));
+      targetBtn.classList.add("active");
+      filterCards(filterValue);
+    }
+  }
+
+  // Check URL parameters on load
+  const filterParam = getUrlParameter("filter");
+  if (filterParam) {
+    triggerFilter(filterParam);
+  }
+
+  elements.filterBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
-      filterBtns.forEach((b) => b.classList.remove("active"));
+      const filterValue = btn.dataset.filter;
+      elements.filterBtns.forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
-      filterCards(btn.dataset.filter);
+      filterCards(filterValue);
+
+      // Update URL without page reload
+      const url = new URL(window.location);
+      url.searchParams.set("filter", filterValue);
+      window.history.pushState({}, "", url);
     });
   });
 
-  resetBtn.addEventListener("click", () => {
-    searchInput.value = "";
-    filterBtns.forEach((btn) => btn.classList.remove("active"));
-    filterBtns[0].classList.add("active");
-    cards.forEach((card) => card.classList.remove("filtered"));
-    updateCount(cards.length);
+  elements.resetBtn.addEventListener("click", () => {
+    elements.searchInput.value = "";
+    elements.filterBtns.forEach((btn) => btn.classList.remove("active"));
+    elements.filterBtns[0].classList.add("active");
+    elements.cards.forEach((card) => card.classList.remove("filtered"));
+    updateCount(elements.cards.length);
+
+    // Clear URL parameters
+    const url = new URL(window.location);
+    url.searchParams.delete("filter");
+    window.history.pushState({}, "", url);
   });
 
   // Initialize with total count
-  updateCount(cards.length);
+  updateCount(elements.cards.length);
 
   // Add mouse move handler for search wrapper
-  searchWrapper.addEventListener("mousemove", (e) => {
-    const rect = searchWrapper.getBoundingClientRect();
+  elements.searchWrapper.addEventListener("mousemove", (e) => {
+    const rect = elements.searchWrapper.getBoundingClientRect();
     const x = ((e.clientX - rect.left) / rect.width) * 100;
     const y = ((e.clientY - rect.top) / rect.height) * 100;
-    searchWrapper.style.setProperty("--x", `${x}%`);
-    searchWrapper.style.setProperty("--y", `${y}%`);
+    elements.searchWrapper.style.setProperty("--x", `${x}%`);
+    elements.searchWrapper.style.setProperty("--y", `${y}%`);
   });
 
   // Typewriter effect for search placeholder
@@ -133,7 +180,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function typeWriter() {
     if (charIndex < phrases[currentPhrase].length) {
-      searchInput.placeholder = phrases[currentPhrase].substring(
+      elements.searchInput.placeholder = phrases[currentPhrase].substring(
         0,
         charIndex + 1
       );
@@ -147,7 +194,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function erase() {
     if (charIndex > 0) {
-      searchInput.placeholder = phrases[currentPhrase].substring(
+      elements.searchInput.placeholder = phrases[currentPhrase].substring(
         0,
         charIndex - 1
       );
@@ -161,49 +208,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Change from using searchContainer to searchWrapper for consistency
-  searchWrapper.addEventListener("click", () => {
-    searchWrapper.classList.add("active");
-    searchInput.focus();
+  elements.searchWrapper.addEventListener("click", () => {
+    elements.searchWrapper.classList.add("active");
+    elements.searchInput.focus();
   });
 
   document.addEventListener("click", (e) => {
-    if (!searchWrapper.contains(e.target)) {
-      searchWrapper.classList.remove("active");
+    if (!elements.searchWrapper.contains(e.target)) {
+      elements.searchWrapper.classList.remove("active");
     }
   });
 
   // Start typewriter effect
   typeWriter();
-
-  // Handle filters visibility on scroll
-  const filters = document.querySelector(".filters");
-  const searchContainer = document.querySelector(".search-container");
-  let lastScroll = window.scrollY;
-  let isVisible = true;
-
-  window.addEventListener("scroll", () => {
-    const currentScroll = window.scrollY;
-    const scrollingDown = currentScroll > lastScroll;
-    const searchContainerBottom =
-      searchContainer.offsetTop + searchContainer.offsetHeight;
-
-    // Only on mobile and after scrolling past search container
-    if (
-      window.innerWidth <= 768 &&
-      currentScroll > searchContainerBottom + 200
-    ) {
-      if (scrollingDown && isVisible) {
-        filters.classList.add("hidden");
-        isVisible = false;
-      } else if (!scrollingDown && !isVisible) {
-        filters.classList.remove("hidden");
-        isVisible = true;
-      }
-    } else {
-      filters.classList.remove("hidden");
-      isVisible = true;
-    }
-
-    lastScroll = currentScroll;
-  });
 });

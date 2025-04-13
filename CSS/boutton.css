@@ -10,6 +10,7 @@
   justify-content: center;
   background-color: var(--color-table-odd-row); /* Fallback color */
   gap: 10px;
+  width: fit-content; /* Adjust width to content */
   padding: 0.7rem;
   border-radius: 2rem;
   margin: 0.5rem;
@@ -26,8 +27,7 @@
   text-decoration: none; /* remove underline from the link */
   background-size: 200% 200%;
   background-position: right bottom;
-  transition: background-position 0.5s ease-out;
-  width: fit-content; /* Adjust width to content */
+  transition: 0.54s ease-out;
 }
 
 .btn-text {
@@ -36,7 +36,7 @@
   font-weight: bold;
   font-size: 1.15rem;
   z-index: 10;
-  transition: all 0.4s cubic-bezier(0.85, 0.46, 0.38, 1.2);
+  transition: all 0.54s cubic-bezier(0.85, 0.46, 0.38, 1.2);
 }
 
 .btn-download svg {

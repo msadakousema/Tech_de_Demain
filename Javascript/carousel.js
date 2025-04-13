@@ -2,7 +2,57 @@ class ImageCarousel {
   constructor(container) {
     this.container = container;
     this.card = container.closest(".card");
-    this.images = container.querySelectorAll("img");
+    this.images = Array.from(container.querySelectorAll("img"));
+    this.isInView = false;
+    this.loadedImages = new Set();
+
+    // Only initialize if more than one image
+    if (this.images.length <= 1) {
+      this.handleSingleImage();
+      return;
+    }
+
+    // Defer full initialization until in view
+    this.setupIntersectionObserver();
+  }
+
+  setupIntersectionObserver() {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !this.isInitialized) {
+            this.isInView = true;
+            this.initialize();
+            this.loadVisibleImages();
+          } else {
+            this.isInView = false;
+            this.stopAutoPlay();
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+    observer.observe(this.container);
+  }
+
+  loadVisibleImages() {
+    this.images.forEach((img, index) => {
+      if (index <= this.currentIndex + 1 && !this.loadedImages.has(img)) {
+        if (img.dataset.src) {
+          img.src = img.dataset.src;
+          this.loadedImages.add(img);
+        }
+      }
+    });
+  }
+
+  handleSingleImage() {
+    if (this.images.length === 1) {
+      this.images[0].classList.add("active");
+    }
+  }
+
+  initialize() {
     this.isDragging = false;
     this.startPos = 0;
     this.currentIndex = 0;
@@ -13,14 +63,6 @@ class ImageCarousel {
     this.images.forEach((img) => {
       img.addEventListener("dragstart", (e) => e.preventDefault());
     });
-
-    // Skip carousel setup for single images
-    if (this.images.length <= 1) {
-      if (this.images.length === 1) {
-        this.images[0].classList.add("active");
-      }
-      return; // Exit early if there's only one or no images
-    }
 
     this.initializeStructure();
     this.initializeEvents();
@@ -81,19 +123,17 @@ class ImageCarousel {
     this.container.addEventListener("touchstart", (e) =>
       this.handleDragStart(e)
     );
-    this.container.addEventListener("touchmove", (e) => this.handleDragMove(e));
-    this.container.addEventListener("touchend", (e) => this.handleDragEnd(e));
-    this.container.addEventListener("touchcancel", (e) =>
-      this.handleDragEnd(e)
-    );
+    this.container.addEventListener("touchmove", this.handleDragMove);
+    this.container.addEventListener("touchend", this.handleDragEnd);
+    this.container.addEventListener("touchcancel", this.handleDragEnd);
 
     // Mouse events
     this.container.addEventListener("mousedown", (e) =>
       this.handleDragStart(e)
     );
-    this.container.addEventListener("mousemove", (e) => this.handleDragMove(e));
-    this.container.addEventListener("mouseup", (e) => this.handleDragEnd(e));
-    this.container.addEventListener("mouseleave", (e) => this.handleDragEnd(e));
+    this.container.addEventListener("mousemove", this.handleDragMove);
+    this.container.addEventListener("mouseup", this.handleDragEnd);
+    this.container.addEventListener("mouseleave", this.handleDragEnd);
 
     // Prevent context menu
     this.container.addEventListener("contextmenu", (e) => e.preventDefault());
@@ -167,9 +207,14 @@ class ImageCarousel {
   handleDragMove(event) {
     if (!this.isDragging) return;
 
-    const currentPosition = this.getPositionX(event);
-    const diff = currentPosition - this.startPos;
+    requestAnimationFrame(() => {
+      const currentPosition = this.getPositionX(event);
+      const diff = currentPosition - this.startPos;
+      this.updatePosition(diff);
+    });
+  }
 
+  updatePosition(diff) {
     // Add resistance at the edges
     const resistance = 0.5;
     const maxTranslate = this.container.offsetWidth * resistance;
@@ -251,6 +296,10 @@ class ImageCarousel {
     )
       return;
 
+    // Preload next image
+    const nextIndex = (index + 1) % this.images.length;
+    this.loadVisibleImages();
+
     // Clean up all images first
     this.images.forEach((img) => {
       img.className = ""; // Remove all classes
@@ -285,11 +334,13 @@ class ImageCarousel {
   }
 
   startAutoPlay() {
-    if (this.images.length <= 1) return; // Skip autoplay for single images
+    if (this.images.length <= 1 || !this.isInView) return;
 
     this.stopAutoPlay(); // Clear any existing interval first
     this.interval = setInterval(() => {
-      this.nextSlide();
+      if (this.isInView) {
+        this.nextSlide();
+      }
     }, 5000);
   }
 
@@ -316,30 +367,31 @@ class ImageCarousel {
   }
 }
 
-// Initialize carousels after DOM is loaded
-document.addEventListener("DOMContentLoaded", () => {
-  // Process cards without image containers
-  document.querySelectorAll(".card").forEach((card) => {
-    if (!card.querySelector(".image-container")) {
-      const images = Array.from(card.querySelectorAll("img"));
-      if (images.length) {
-        const imageContainer = document.createElement("div");
-        imageContainer.className = "image-container";
+// Initialize carousels efficiently
+const initCarousels = () => {
+  const containers = document.querySelectorAll(".image-container");
 
-        // Clone images to prevent DOM manipulation errors
-        images.forEach((img) => {
-          const clone = img.cloneNode(true);
-          imageContainer.appendChild(clone);
-          img.remove(); // Remove original after cloning
-        });
+  // Create a Map to store carousel instances
+  const carousels = new Map();
 
-        card.insertBefore(imageContainer, card.firstChild);
-      }
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const container = entry.target;
+
+        if (entry.isIntersecting && !carousels.has(container)) {
+          // Create carousel only when container comes into view
+          carousels.set(container, new ImageCarousel(container));
+        }
+      });
+    },
+    {
+      rootMargin: "50px",
+      threshold: 0.1,
     }
-  });
+  );
 
-  // Initialize all carousels
-  document.querySelectorAll(".image-container").forEach((container) => {
-    new ImageCarousel(container);
-  });
-});
+  containers.forEach((container) => observer.observe(container));
+};
+
+document.addEventListener("DOMContentLoaded", initCarousels);

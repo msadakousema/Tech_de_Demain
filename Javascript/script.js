@@ -54,6 +54,9 @@ const debouncedSetAnimation = debounce(setAnimationDuration, 150);
 // Text element setup
 const textElement = document.querySelector("h1.text-observed");
 
+// Store all observers in a single collection for better management
+const observers = new Set();
+
 // Optimized observer setup with mobile considerations
 if (textElement) {
   const observerOptions = {
@@ -63,6 +66,7 @@ if (textElement) {
   };
 
   const textObserver = new MutationObserver(debouncedSetAnimation);
+  observers.add(textObserver);
 
   // Disconnect observer when element is not visible
   const visibilityObserver = new IntersectionObserver((entries) => {
@@ -74,6 +78,7 @@ if (textElement) {
       }
     });
   });
+  observers.add(visibilityObserver);
 
   visibilityObserver.observe(textElement);
 
@@ -114,6 +119,7 @@ if (heroSection && navbar) {
       rootMargin: "-10px",
     }
   );
+  observers.add(navbarObserver);
 
   navbarObserver.observe(heroSection);
 }
@@ -138,26 +144,37 @@ if (!isMobile) {
   });
 }
 
-// Cleanup function
+// Enhanced cleanup function
 function cleanup() {
-  // Only disconnect observers when page is hidden
-  document.addEventListener("visibilitychange", () => {
+  const handleVisibilityChange = () => {
     if (document.hidden) {
-      // Only disconnect if observers exist
-      if (typeof textObserver !== "undefined") textObserver.disconnect();
-      if (typeof visibilityObserver !== "undefined")
-        visibilityObserver.disconnect();
-      if (typeof navbarObserver !== "undefined") navbarObserver.disconnect();
+      observers.forEach((observer) => observer.disconnect());
+    } else {
+      // Reconnect observers when page becomes visible
+      if (textElement) textObserver.observe(textElement, observerOptions);
+      if (heroSection) navbarObserver.observe(heroSection);
     }
+  };
+
+  document.addEventListener("visibilitychange", handleVisibilityChange);
+  window.addEventListener("unload", () => {
+    observers.forEach((observer) => observer.disconnect());
+    document.removeEventListener("visibilitychange", handleVisibilityChange);
   });
 }
 
 // Initialize with error handling and cleanup
 try {
-  window.addEventListener("load", () => {
-    debouncedSetAnimation();
-    cleanup();
-  });
+  window.addEventListener(
+    "load",
+    () => {
+      debouncedSetAnimation();
+      cleanup();
+    },
+    { once: true }
+  );
 } catch (error) {
   console.error("Failed to initialize:", error);
+  // Attempt to clean up even if initialization fails
+  observers.forEach((observer) => observer.disconnect());
 }
