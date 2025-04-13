@@ -3,16 +3,29 @@ class ImageCarousel {
     this.container = container;
     this.card = container.closest(".card");
     this.images = Array.from(container.querySelectorAll("img"));
+    this.isDragging = false;
+    this.startPos = 0;
+    this.currentIndex = 0;
+    this.threshold = 100;
+    this.interval = null;
     this.isInView = false;
     this.loadedImages = new Set();
+    this.isInitialized = false;
 
-    // Only initialize if more than one image
+    // Prevent default image dragging
+    this.images.forEach((img) => {
+      img.addEventListener("dragstart", (e) => e.preventDefault());
+    });
+
+    // Skip carousel setup for single images
     if (this.images.length <= 1) {
-      this.handleSingleImage();
-      return;
+      if (this.images.length === 1) {
+        this.images[0].classList.add("active");
+      }
+      return; // Exit early if there's only one or no images
     }
 
-    // Defer full initialization until in view
+    // Defer initialization until in view
     this.setupIntersectionObserver();
   }
 
@@ -22,8 +35,9 @@ class ImageCarousel {
         entries.forEach((entry) => {
           if (entry.isIntersecting && !this.isInitialized) {
             this.isInView = true;
+            this.isInitialized = true;
             this.initialize();
-            this.loadVisibleImages();
+            this.preloadVisibleImages();
           } else {
             this.isInView = false;
             this.stopAutoPlay();
@@ -35,35 +49,21 @@ class ImageCarousel {
     observer.observe(this.container);
   }
 
-  loadVisibleImages() {
-    this.images.forEach((img, index) => {
-      if (index <= this.currentIndex + 1 && !this.loadedImages.has(img)) {
-        if (img.dataset.src) {
-          img.src = img.dataset.src;
+  preloadVisibleImages() {
+    requestAnimationFrame(() => {
+      const visibleRange = 2; // Preload next 2 images
+      for (let i = 0; i <= visibleRange; i++) {
+        const index = (this.currentIndex + i) % this.images.length;
+        const img = this.images[index];
+        if (img && !this.loadedImages.has(img)) {
+          img.src = img.dataset.src || img.src;
           this.loadedImages.add(img);
         }
       }
     });
   }
 
-  handleSingleImage() {
-    if (this.images.length === 1) {
-      this.images[0].classList.add("active");
-    }
-  }
-
   initialize() {
-    this.isDragging = false;
-    this.startPos = 0;
-    this.currentIndex = 0;
-    this.threshold = 100;
-    this.interval = null;
-
-    // Prevent default image dragging
-    this.images.forEach((img) => {
-      img.addEventListener("dragstart", (e) => e.preventDefault());
-    });
-
     this.initializeStructure();
     this.initializeEvents();
     this.startAutoPlay();
@@ -123,17 +123,19 @@ class ImageCarousel {
     this.container.addEventListener("touchstart", (e) =>
       this.handleDragStart(e)
     );
-    this.container.addEventListener("touchmove", this.handleDragMove);
-    this.container.addEventListener("touchend", this.handleDragEnd);
-    this.container.addEventListener("touchcancel", this.handleDragEnd);
+    this.container.addEventListener("touchmove", (e) => this.handleDragMove(e));
+    this.container.addEventListener("touchend", (e) => this.handleDragEnd(e));
+    this.container.addEventListener("touchcancel", (e) =>
+      this.handleDragEnd(e)
+    );
 
     // Mouse events
     this.container.addEventListener("mousedown", (e) =>
       this.handleDragStart(e)
     );
-    this.container.addEventListener("mousemove", this.handleDragMove);
-    this.container.addEventListener("mouseup", this.handleDragEnd);
-    this.container.addEventListener("mouseleave", this.handleDragEnd);
+    this.container.addEventListener("mousemove", (e) => this.handleDragMove(e));
+    this.container.addEventListener("mouseup", (e) => this.handleDragEnd(e));
+    this.container.addEventListener("mouseleave", (e) => this.handleDragEnd(e));
 
     // Prevent context menu
     this.container.addEventListener("contextmenu", (e) => e.preventDefault());
@@ -215,7 +217,6 @@ class ImageCarousel {
   }
 
   updatePosition(diff) {
-    // Add resistance at the edges
     const resistance = 0.5;
     const maxTranslate = this.container.offsetWidth * resistance;
 
@@ -226,67 +227,85 @@ class ImageCarousel {
 
     this.currentTranslate = translate;
 
-    // Apply transforms
-    const activeImg = this.container.querySelector("img.active");
-    if (!activeImg) return;
+    requestAnimationFrame(() => {
+      const activeImg = this.container.querySelector("img.active");
+      if (!activeImg) return;
 
-    const prevImg = this.container.querySelector("img.previous");
+      const prevImg = this.container.querySelector("img.previous");
+      const allImages = Array.from(this.images);
+      const nextIndex = (this.currentIndex + 1) % allImages.length;
+      const nextImg = allImages[nextIndex];
 
-    // Find the next image properly - get all images and find the next one after current index
-    const allImages = Array.from(this.images);
-    const nextIndex = (this.currentIndex + 1) % allImages.length;
-    const nextImg = allImages[nextIndex];
+      // Ensure proper stacking with explicit z-indices
+      activeImg.style.zIndex = "3";
+      if (prevImg) prevImg.style.zIndex = "2";
+      if (nextImg) nextImg.style.zIndex = "2";
 
-    // Set z-index for proper layering
-    activeImg.style.zIndex = "2";
-    if (prevImg) prevImg.style.zIndex = "1";
-    if (nextImg) nextImg.style.zIndex = "1";
+      // Center alignment correction
+      const containerWidth = this.container.offsetWidth;
 
-    activeImg.style.transform = `translateX(${translate}px)`;
+      // Active image transform
+      activeImg.style.transform = `translate3d(${translate}px, 0, 0)`;
+      activeImg.style.opacity = "1";
 
-    if (translate > 0 && prevImg) {
-      prevImg.style.transform = `translateX(${
-        translate - this.container.offsetWidth
-      }px)`;
-      prevImg.style.opacity = "1";
-    }
+      // Previous image transform
+      if (prevImg) {
+        const prevTranslate = translate - containerWidth;
+        prevImg.style.transform = `translate3d(${prevTranslate}px, 0, 0)`;
+        prevImg.style.opacity = translate > 0 ? "1" : "0.3";
+      }
 
-    if (translate < 0 && nextImg) {
-      nextImg.style.transform = `translateX(${
-        translate + this.container.offsetWidth
-      }px)`;
-      nextImg.style.opacity = "1";
-    }
+      // Next image transform
+      if (nextImg) {
+        const nextTranslate = translate + containerWidth;
+        nextImg.style.transform = `translate3d(${nextTranslate}px, 0, 0)`;
+        nextImg.style.opacity = translate < 0 ? "1" : "0.3";
+      }
+
+      // Add will-change for better performance
+      [activeImg, prevImg, nextImg].forEach((img) => {
+        if (img) {
+          img.style.willChange = "transform, opacity";
+        }
+      });
+    });
   }
 
   handleDragEnd(event) {
     if (!this.isDragging) return;
 
     this.isDragging = false;
-    this.container.classList.remove("dragging");
-    this.container.classList.remove("no-transition");
+    this.container.classList.remove("dragging", "no-transition");
 
     const diff = this.currentTranslate;
-    const threshold = this.container.offsetWidth * 0.2; // 20% of container width
+    const threshold = this.container.offsetWidth * 0.2;
 
-    // Clean up styles before transition
+    // Reset will-change
     this.images.forEach((img) => {
-      img.style.cssText = ""; // Remove inline styles completely
+      img.style.willChange = "auto";
     });
 
-    if (Math.abs(diff) > threshold) {
-      if (diff > 0) {
-        this.prevSlide();
-      } else {
-        this.nextSlide();
-      }
-    } else {
-      // Reset to current slide without leftover styles
-      this.showSlide(this.currentIndex, true);
-    }
+    // Clean up styles with RAF for smooth transition
+    requestAnimationFrame(() => {
+      this.images.forEach((img) => {
+        img.style.transition = "all 0.3s var(--easing)";
+        img.style.transform = "";
+        img.style.opacity = "";
+      });
 
-    // Resume autoplay after drag
-    this.startAutoPlay();
+      if (Math.abs(diff) > threshold) {
+        if (diff > 0) {
+          this.prevSlide();
+        } else {
+          this.nextSlide();
+        }
+      } else {
+        this.showSlide(this.currentIndex, true);
+      }
+
+      // Resume autoplay after drag
+      this.startAutoPlay();
+    });
   }
 
   showSlide(index, forceUpdate = false) {
@@ -296,51 +315,48 @@ class ImageCarousel {
     )
       return;
 
-    // Preload next image
-    const nextIndex = (index + 1) % this.images.length;
-    this.loadVisibleImages();
+    requestAnimationFrame(() => {
+      // Clean up all images first
+      this.images.forEach((img) => {
+        img.className = ""; // Remove all classes
+        img.style.cssText = ""; // Remove inline styles completely
+      });
 
-    // Clean up all images first
-    this.images.forEach((img) => {
-      img.className = ""; // Remove all classes
-      img.style.cssText = ""; // Remove inline styles completely
+      // Add transition class first
+      this.container.classList.add("transitioning");
+
+      const previousIndex = this.currentIndex;
+      const direction = index > previousIndex ? 1 : -1;
+
+      // Apply new classes without inline styles
+      if (direction > 0) {
+        this.images[previousIndex].className = "previous slide-left";
+        this.images[index].className = "active";
+      } else {
+        this.images[previousIndex].className = "previous slide-right";
+        this.images[index].className = "active";
+      }
+
+      // Update dots
+      const dots = this.container.querySelectorAll(".nav-dot");
+      dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
+
+      // Remove transition class after animation completes
+      setTimeout(() => {
+        this.container.classList.remove("transitioning");
+      }, 500);
+
+      this.currentIndex = index;
+      this.preloadVisibleImages();
     });
-
-    // Add transition class first
-    this.container.classList.add("transitioning");
-
-    const previousIndex = this.currentIndex;
-    const direction = index > previousIndex ? 1 : -1;
-
-    // Apply new classes without inline styles
-    if (direction > 0) {
-      this.images[previousIndex].className = "previous slide-left";
-      this.images[index].className = "active";
-    } else {
-      this.images[previousIndex].className = "previous slide-right";
-      this.images[index].className = "active";
-    }
-
-    // Update dots
-    const dots = this.container.querySelectorAll(".nav-dot");
-    dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
-
-    // Remove transition class after animation completes
-    setTimeout(() => {
-      this.container.classList.remove("transitioning");
-    }, 500);
-
-    this.currentIndex = index;
   }
 
   startAutoPlay() {
-    if (this.images.length <= 1 || !this.isInView) return;
+    if (this.images.length <= 1) return; // Skip autoplay for single images
 
     this.stopAutoPlay(); // Clear any existing interval first
     this.interval = setInterval(() => {
-      if (this.isInView) {
-        this.nextSlide();
-      }
+      this.nextSlide();
     }, 5000);
   }
 
@@ -368,30 +384,23 @@ class ImageCarousel {
 }
 
 // Initialize carousels efficiently
-const initCarousels = () => {
-  const containers = document.querySelectorAll(".image-container");
-
-  // Create a Map to store carousel instances
+function initCarousels() {
   const carousels = new Map();
 
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        const container = entry.target;
-
-        if (entry.isIntersecting && !carousels.has(container)) {
-          // Create carousel only when container comes into view
-          carousels.set(container, new ImageCarousel(container));
+        if (entry.isIntersecting && !carousels.has(entry.target)) {
+          carousels.set(entry.target, new ImageCarousel(entry.target));
         }
       });
     },
-    {
-      rootMargin: "50px",
-      threshold: 0.1,
-    }
+    { rootMargin: "50px" }
   );
 
-  containers.forEach((container) => observer.observe(container));
-};
+  document.querySelectorAll(".image-container").forEach((container) => {
+    observer.observe(container);
+  });
+}
 
 document.addEventListener("DOMContentLoaded", initCarousels);
