@@ -367,7 +367,7 @@ tbody tr:nth-child(even) {
 
 tbody tr:hover,
 tbody tr:focus {
-  background-color: var(--bg-secondary);
+  background-color: var(--navbar-bg);
   transition: background 0.35s cubic-bezier(0.2, 0.4, 0.3, 1);
 }
 
@@ -466,9 +466,30 @@ tbody tr:nth-child(odd) td:not([rowspan]) {
 }
 
 /* Video section styles */
-.video-section,
 .video-container {
-  display: none;
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  height: 0;
+  overflow: hidden;
+  border-radius: 1rem;
+  background: var(--card-bg);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s var(--easing), box-shadow 0.3s ease;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.video-container:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
 }
 
 /* Enhanced preview container styles */
