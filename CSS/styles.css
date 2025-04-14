@@ -552,7 +552,7 @@ body {
 }
 
 .image-container.dragging {
-  cursor: url("../Images/grab.png"), grabbing;
+  cursor: url("../Images/Icons/grab.png"), grabbing;
 }
 
 .image-container.dragging img {
@@ -679,12 +679,13 @@ body {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 20; /* Increase z-index to always stay on top */
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  z-index: 20;
+  border: 2px solid var(--card-border);
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: auto; /* Ensure clicks are always registered */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), 0 4px 15px rgba(74, 144, 226, 0.1),
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1),
+    0 4px 15px var(--button-hover-transparent),
     inset 0 0 2px rgba(255, 255, 255, 0.3);
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
@@ -695,10 +696,10 @@ body {
   content: "";
   position: absolute;
   inset: -2px;
-  background: linear-gradient(45deg, #4a90e2, #b5c6e0);
+  background: linear-gradient(45deg, var(--button), var(--button-hover) 80%);
   z-index: -2;
-  transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
+  transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .image-nav.prev-btn::after {
   transform: translateX(100%) rotate(180deg);
@@ -725,7 +726,7 @@ body {
 }
 
 .image-nav:hover::after {
-  opacity: 0.5;
+  opacity: 0.7;
   transform: rotate(180deg);
   border-radius: inherit;
 }
@@ -881,7 +882,8 @@ button {
   background-position: center center;
 }
 
-.hero:hover {
+.hero:hover,
+.hero:focus {
   box-shadow: var(--shadow-lg);
   transform: scale(1.05);
 }

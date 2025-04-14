@@ -1,7 +1,8 @@
 class ImageCarousel {
   constructor(container) {
     this.container = container;
-    this.card = container.closest(".card");
+    // Find the closest parent that's either a card or use the container itself
+    this.parentElement = container.closest(".card") || container;
     this.images = Array.from(container.querySelectorAll("img"));
     this.isDragging = false;
     this.startPos = 0;
@@ -179,9 +180,13 @@ class ImageCarousel {
       dot.addEventListener("touchend", handleDot);
     });
 
-    // Add hover pause/resume
-    this.card.addEventListener("mouseenter", () => this.stopAutoPlay());
-    this.card.addEventListener("mouseleave", () => this.startAutoPlay());
+    // Add hover pause/resume to the parent element (card or container)
+    this.parentElement.addEventListener("mouseenter", () =>
+      this.stopAutoPlay()
+    );
+    this.parentElement.addEventListener("mouseleave", () =>
+      this.startAutoPlay()
+    );
   }
 
   getPositionX(event) {
