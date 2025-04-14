@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الإدمان الرقمي: التعريف، المظاهر، والعلاج</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Tajawal', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle, #1a1a2e, #0f0f1b);
+      color: #eee;
+      line-height: 1.8;
+      text-align: center;
+      font-size: 1.2rem; /* Increased base font size */
+    }
+
+    h1, h2, h3 {
+      color: #00eaff;
+      font-weight: bold;
+      text-shadow: 0 0 15px rgba(0, 234, 255, 0.8);
+    }
+
+    h1 {
+      font-size: 4rem; /* Larger header text */
+    }
+
+    h2 {
+      font-size: 2.8rem; /* Larger section titles */
+    }
+
+    p, li {
+      font-size: 1.3rem; /* Larger paragraph and list text */
+    }
+
+    a {
+      color: #ff007f;
+      text-decoration: none;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    a:hover {
+      color: #ff4da6;
+      transform: scale(1.1);
+    }
+
+    /* Header */
+    header {
+      background: rgba(20, 20, 40, 0.9);
+      padding: 100px 20px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0, 195, 255, 0.3);
+    }
+
+    header h1 {
+      font-size: 4rem;
+      margin: 0;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    nav a {
+      font-size: 1.5rem; /* Slightly larger navigation links */
+      font-weight: bold;
+      color: #fff;
+      transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #00eaff;
+      text-shadow: 0px 0px 10px rgba(0, 195, 255, 0.6);
+    }
+
+    /* Main Content */
+    .container {
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 30px;
+      text-align: right;
+      background: rgba(50, 50, 70, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0, 195, 255, 0.4);
+      backdrop-filter: blur(15px);
+    }
+
+    .section img {
+      width: 80%; /* Adjusted image size */
+      max-width: 600px; /* Smaller max-width for images */
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 195, 255, 0.5);
+      transition: transform 0.4s ease;
+    }
+
+    .section img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      font-size: 1.3rem; /* Larger button text */
+      font-weight: bold;
+      color: #fff;
+      background: linear-gradient(45deg, #ff007f, #ff4da6);
+      border: none;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(255, 69, 0, 0.4);
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(255, 69, 0, 0.6);
+    }
+
+    /* Footer */
+    footer {
+      background: rgba(20, 20, 40, 0.9);
+      color: #eee;
+      text-align: center;
+      padding: 40px 0;
+      margin-top: 80px;
+      font-size: 1.3rem;
+      box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Source Section */
+    .source {
+      margin-top: 40px;
+      font-size: 1.1rem;
+      color: #aaa;
+    }
+
+    .source a {
+      color: #00eaff;
+      text-decoration: underline;
+    }
+
+    .source a:hover {
+      color: #ff4da6;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <h1 id="header-title">الإدمان الرقمي</h1>
+    <p id="header-subtitle">التعريف، المظاهر، والعلاج</p>
+  </header>
+
+  <nav>
+    <a href="#definition" id="nav-definition">التعريف</a>
+    <a href="#symptoms" id="nav-symptoms">المظاهر</a>
+    <a href="#treatment" id="nav-treatment">العلاج</a>
+    <a href="#conclusion" id="nav-conclusion">الخلاصة</a>
+  </nav>
+
+  <!-- Language Selection Dropdown -->
+  <div style="text-align: center; margin: 20px 0;">
+    <label for="language-select">اختر اللغة:</label>
+    <select id="language-select" class="btn" onchange="changeLanguage(this.value)">
+      <option value="ar">العربية</option>
+      <option value="en">English</option>
+      <option value="fr">Français</option>
+    </select>
+  </div>
+
+  <div class="container">
+    <section id="definition" class="section">
+      <h2 id="definition-title">تعريف الإدمان الرقمي</h2>
+      <p id="definition-text">الإدمان الرقمي هو حالة من الاعتماد المفرط على الأجهزة الرقمية والتكنولوجيا، مثل الهواتف الذكية، والأجهزة اللوحية، وألعاب الفيديو، ووسائل التواصل الاجتماعي، والإنترنت. يتسم هذا النوع من الإدمان بالصعوبة في التحكم في الوقت الذي يقضيه الشخص في استخدام هذه الأجهزة أو المنصات، مما يؤثر سلبًا على جوانب مختلفة من حياته اليومية. تشمل الآثار السلبية تدهور العلاقات الاجتماعية، وانخفاض الإنتاجية في العمل أو الدراسة، وتأثيرات سلبية على الصحة النفسية والجسدية.</p>
+      <a href="#symptoms" class="btn" id="definition-button">تعرف على المظاهر</a>
+      <img src="2.JPG" alt="تعريف الإدمان الرقمي">
+    </section>
+
+    <section id="symptoms" class="section">
+      <h2 id="symptoms-title">مظاهر الإدمان الرقمي</h2>
+      <ul id="symptoms-list">
+        <li><strong>الاستخدام المفرط:</strong> قضاء ساعات طويلة في استخدام الأجهزة دون هدف محدد.</li>
+        <li><strong>إهمال المسؤوليات:</strong> التأثير على العمل، الدراسة، والواجبات اليومية.</li>
+        <li><strong>التأثير على الصحة النفسية:</strong> الشعور بالقلق، التوتر، الاكتئاب، أو الوحدة.</li>
+        <li><strong>التأثير على الصحة الجسدية:</strong> مشاكل في النوم، آلام في الرقبة والظهر، وإجهاد العينين.</li>
+        <li><strong>العزلة الاجتماعية:</strong> تفضيل التفاعل الرقمي على التواصل المباشر مع الآخرين.</li>
+        <li><strong>فقدان السيطرة على الوقت:</strong> عدم القدرة على التحكم في الوقت الذي يقضيه الفرد في استخدام الأجهزة.</li>
+        <li><strong>الاعتماد العاطفي:</strong> استخدام الأجهزة كوسيلة للهروب من المشاكل أو الضغوط النفسية.</li>
+        <li><strong>تأثيرات على الأطفال والمراهقين:</strong> انخفاض الأداء الدراسي، صعوبة في تكوين العلاقات، وزيادة العدوانية أو الانعزال.</li>
+      </ul>
+      <a href="#treatment" class="btn btn-secondary" id="symptoms-button">اكتشف العلاج</a>
+      <img src="1.JPG" alt="مظاهر الإدمان الرقمي">
+    </section>
+
+    <section id="treatment" class="section">
+      <h2 id="treatment-title">طرق علاج الإدمان الرقمي</h2>
+      <ul id="treatment-list">
+        <li><strong>وضع حدود زمنية للاستخدام:</strong> تحديد أوقات محددة لاستخدام الأجهزة الرقمية والتقيد بها.</li>
+        <li><strong>ممارسة أنشطة بديلة:</strong> استبدال الوقت الذي يقضيه الفرد على الأجهزة بأنشطة مفيدة مثل القراءة، الرياضة، أو الهوايات الإبداعية.</li>
+        <li><strong>إنشاء مناطق خالية من الأجهزة:</strong> تحديد أماكن في المنزل تكون خالية من الأجهزة الرقمية مثل غرف النوم أو طاولة الطعام.</li>
+        <li><strong>تطوير عادات نوم صحية:</strong> تجنب استخدام الأجهزة الرقمية قبل النوم بساعة على الأقل.</li>
+        <li><strong>زيادة الوعي بالمشكلة:</strong> التعرّف على الآثار السلبية للإدمان الرقمي على الصحة النفسية والجسدية.</li>
+        <li><strong>استخدام التطبيقات المساعدة:</strong> Digital Wellbeing ||Screen Time || Forest استخدام تطبيقات تساعد على تقليل الوقت الذي يقضيه الفرد على الأجهزة الرقمية.</li>
+        <li><strong>تعزيز العلاقات الاجتماعية</strong></li>
+      </ul>
+      <p id="treatment-text">هناك العديد من الكتب التي تتناول موضوع الإدمان الرقمي، وتستعرض تأثير استخدام التكنولوجيا ووسائل التواصل الاجتماعي على الأفراد والمجتمع. من أبرز هذه الكتب كتاب <strong>"Digital Minimalism"</strong> (التقليل الرقمي) للكاتب <strong>Cal Newport</strong>، الذي يناقش كيفية تقليل تأثير التكنولوجيا الرقمية على حياتنا، ويقدم نصائح حول كيفية إدارة الوقت والموارد بشكل أكثر فاعلية.</p>
+      <a href="https://youtu.be/llrLawTDN38?si=tKAZBoUyCO2u_jIE" target="_blank" class="video-button">
+        <span id="video-button-text">شرح كتاب التقليل الرقمي | بوكافيين</span>
+      </a>
+      <video id="video" src="5.mp4" poster="thumbnail.jpg" controls></video>
+      <button id="playButton" class="play-btn">▶</button>
+      <a href="#conclusion" class="btn" id="treatment-button">اقرا الخلاصة</a>
+      <img src="3.JPG" alt="علاج الإدمان الرقمي">
+    </section>
+
+    <section id="conclusion" class="section">
+      <h2 id="conclusion-title">الخلاصة</h2>
+      <p id="conclusion-text">الإدمان الرقمي هو حالة يتم فيها استخدام التكنولوجيا بشكل مفرط إلى درجة أنها تؤثر سلباً على حياة الشخص اليومية. يشمل هذا الإدمان استخدام الأجهزة الإلكترونية مثل الهواتف الذكية، الإنترنت، ألعاب الفيديو ووسائل التواصل الاجتماعي. يتسبب هذا الإدمان في عواقب صحية، نفسية، واجتماعية، حيث قد يعاني الشخص من مشاكل في التركيز، اضطرابات النوم، الاكتئاب، وتدهور العلاقات الاجتماعية. كما أن الشباب هم الأكثر تعرضًا لهذه الظاهرة بسبب استخدامهم المتزايد للأجهزة الإلكترونية....</p>
+      <a href="#definition" class="btn btn-secondary" id="conclusion-button">العودة إلى الأعلى</a>
+    </section>
+
+<section id="sources">
+    <h2>Sources & References</h2>
+    <ul class="source-list">
+        <li>
+            <a href="https://youtu.be/llrLawTDN38?si=tKAZBoUyCO2u_jIE" target="_blank">
+                <i class="fab fa-youtube"></i> Youtube: شرح كتاب التقليل الرقمي | بوكافيين
+            </a>
+        </li>
+        <li>
+            <a href="https://www.amazon.com/Digital-Minimalism-Choosing-Focused-Noisy/dp/0525536515" target="_blank">
+                <i class="fas fa-book"></i> Digital Minimalism – Cal Newport (Amazon)
+            </a>
+        </li>
+        <li>
+            <a href="https://www.penguinrandomhouse.com/books/575667/digital-minimalism-by-cal-newport/" target="_blank">
+                <i class="fas fa-globe"></i> Penguin Random House – Digital Minimalism
+            </a>
+        </li>
+        <li>
+            <a href="https://www.goodreads.com/book/show/40672036-digital-minimalism" target="_blank">
+                <i class="fas fa-star"></i> Digital Minimalism Reviews (Goodreads)
+            </a>
+        </li>
+        <li>
+            <a href="https://calnewport.com/on-digital-minimalism/" target="_blank">
+                <i class="fas fa-pen"></i> Cal Newport's Blog on Digital Minimalism
+            </a>
+        </li>
+        <li>
+            <a href="https://www.youtube.com/watch?v=sJdZ7kmA2QQ" target="_blank">
+                <i class="fab fa-youtube"></i> Digital Minimalism – YouTube Summary
+            </a>
+        </li>
+    </ul>
+</section>
+    </div>
+  </div>
+
+  <footer>
+    <p> <a href="#" target="_blank">[Ahmed Farhat]</a></p>
+  </footer>
+
+ 
+  <script>
+    const translations = {
+      ar: {
+        headerTitle: "الإدمان الرقمي",
+        headerSubtitle: "التعريف، المظاهر، والعلاج",
+        navDefinition: "التعريف",
+        navSymptoms: "المظاهر",
+        navTreatment: "العلاج",
+        navConclusion: "الخلاصة",
+        definitionTitle: "تعريف الإدمان الرقمي",
+        definitionText: "الإدمان الرقمي هو حالة من الاعتماد المفرط على الأجهزة الرقمية والتكنولوجيا...",
+        definitionButton: "تعرف على المظاهر",
+        symptomsTitle: "مظاهر الإدمان الرقمي",
+        symptomsList: [
+          "<strong>الاستخدام المفرط:</strong> قضاء ساعات طويلة في استخدام الأجهزة دون هدف محدد.",
+          "<strong>إهمال المسؤوليات:</strong> التأثير على العمل، الدراسة، والواجبات اليومية.",
+          "<strong>التأثير على الصحة النفسية:</strong> الشعور بالقلق، التوتر، الاكتئاب، أو الوحدة.",
+          "<strong>التأثير على الصحة الجسدية:</strong> مشاكل في النوم، آلام في الرقبة والظهر، وإجهاد العينين.",
+          "<strong>العزلة الاجتماعية:</strong> تفضيل التفاعل الرقمي على التواصل المباشر مع الآخرين.",
+          "<strong>فقدان السيطرة على الوقت:</strong> عدم القدرة على التحكم في الوقت الذي يقضيه الفرد في استخدام الأجهزة.",
+          "<strong>الاعتماد العاطفي:</strong> استخدام الأجهزة كوسيلة للهروب من المشاكل أو الضغوط النفسية.",
+          "<strong>تأثيرات على الأطفال والمراهقين:</strong> انخفاض الأداء الدراسي، صعوبة في تكوين العلاقات، وزيادة العدوانية أو الانعزال."
+        ],
+        symptomsButton: "اكتشف العلاج",
+        treatmentTitle: "طرق علاج الإدمان الرقمي",
+        treatmentList: [
+          "<strong>وضع حدود زمنية للاستخدام:</strong> تحديد أوقات محددة لاستخدام الأجهزة الرقمية والتقيد بها.",
+          "<strong>ممارسة أنشطة بديلة:</strong> استبدال الوقت الذي يقضيه الفرد على الأجهزة بأنشطة مفيدة مثل القراءة، الرياضة، أو الهوايات الإبداعية.",
+          "<strong>إنشاء مناطق خالية من الأجهزة:</strong> تحديد أماكن في المنزل تكون خالية من الأجهزة الرقمية مثل غرف النوم أو طاولة الطعام.",
+          "<strong>تطوير عادات نوم صحية:</strong> تجنب استخدام الأجهزة الرقمية قبل النوم بساعة على الأقل.",
+          "<strong>زيادة الوعي بالمشكلة:</strong> التعرّف على الآثار السلبية للإدمان الرقمي على الصحة النفسية والجسدية.",
+          "<strong>استخدام التطبيقات المساعدة:</strong> Digital Wellbeing ||Screen Time || Forest استخدام تطبيقات تساعد على تقليل الوقت الذي يقضيه الفرد على الأجهزة الرقمية.",
+          "<strong>تعزيز العلاقات الاجتماعية</strong>"
+        ],
+        treatmentText: "هناك العديد من الكتب التي تتناول موضوع الإدمان الرقمي، وتستعرض تأثير استخدام التكنولوجيا ووسائل التواصل الاجتماعي على الأفراد والمجتمع. من أبرز هذه الكتب كتاب <strong>\"Digital Minimalism\"</strong> (التقليل الرقمي) للكاتب <strong>Cal Newport</strong>، الذي يناقش كيفية تقليل تأثير التكنولوجيا الرقمية على حياتنا، ويقدم نصائح حول كيفية إدارة الوقت والموارد بشكل أكثر فاعلية.",
+        videoButtonText: "شرح كتاب التقليل الرقمي | بوكافيين",
+        treatmentButton: "اقرا الخلاصة",
+        conclusionTitle: "الخلاصة",
+        conclusionText: "الإدمان الرقمي هو حالة يتم فيها استخدام التكنولوجيا بشكل مفرط إلى درجة أنها تؤثر سلباً على حياة الشخص اليومية. يشمل هذا الإدمان استخدام الأجهزة الإلكترونية مثل الهواتف الذكية، الإنترنت، ألعاب الفيديو ووسائل التواصل الاجتماعي. يتسبب هذا الإدمان في عواقب صحية، نفسية، واجتماعية، حيث قد يعاني الشخص من مشاكل في التركيز، اضطرابات النوم، الاكتئاب، وتدهور العلاقات الاجتماعية. كما أن الشباب هم الأكثر تعرضًا لهذه الظاهرة بسبب استخدامهم المتزايد للأجهزة الإلكترونية....",
+        conclusionButton: "العودة إلى الأعلى"
+      },
+      en: {
+        headerTitle: "Digital Addiction",
+        headerSubtitle: "Definition, Symptoms, and Treatment",
+        navDefinition: "Definition",
+        navSymptoms: "Symptoms",
+        navTreatment: "Treatment",
+        navConclusion: "Conclusion",
+        definitionTitle: "Definition of Digital Addiction",
+        definitionText: "Digital addiction is a state of excessive reliance on digital devices and technology...",
+        definitionButton: "Learn About Symptoms",
+        symptomsTitle: "Symptoms of Digital Addiction",
+        symptomsList: [
+          "<strong>Excessive Use:</strong> Spending long hours on devices without a specific purpose.",
+          "<strong>Neglecting Responsibilities:</strong> Impact on work, studies, and daily duties.",
+          "<strong>Impact on Mental Health:</strong> Feelings of anxiety, stress, depression, or loneliness.",
+          "<strong>Impact on Physical Health:</strong> Sleep problems, neck and back pain, and eye strain.",
+          "<strong>Social Isolation:</strong> Preferring digital interaction over face-to-face communication.",
+          "<strong>Loss of Time Control:</strong> Inability to control the time spent on devices.",
+          "<strong>Emotional Dependence:</strong> Using devices as a way to escape problems or psychological pressures.",
+          "<strong>Effects on Children and Adolescents:</strong> Decline in academic performance, difficulty forming relationships, and increased aggression or isolation."
+        ],
+        symptomsButton: "Discover Treatment",
+        treatmentTitle: "Ways to Treat Digital Addiction",
+        treatmentList: [
+          "<strong>Setting Time Limits:</strong> Defining specific times for using digital devices and adhering to them.",
+          "<strong>Engaging in Alternative Activities:</strong> Replacing device time with beneficial activities like reading, sports, or creative hobbies.",
+          "<strong>Creating Device-Free Zones:</strong> Designating areas in the home, such as bedrooms or dining tables, as device-free zones.",
+          "<strong>Developing Healthy Sleep Habits:</strong> Avoiding the use of digital devices at least one hour before bedtime.",
+          "<strong>Increasing Awareness of the Problem:</strong> Understanding the negative effects of digital addiction on mental and physical health.",
+          "<strong>Using Helper Apps:</strong> Digital Wellbeing || Screen Time || Forest: Using apps that help reduce the time spent on digital devices.",
+          "<strong>Strengthening Social Relationships</strong>"
+        ],
+        treatmentText: "There are many books that address the topic of digital addiction, exploring the impact of technology and social media on individuals and society. One of the most prominent books is <strong>\"Digital Minimalism\"</strong> by <strong>Cal Newport</strong>, which discusses how to reduce the impact of digital technology on our lives and offers tips on managing time and resources more effectively.",
+        videoButtonText: "Explanation of Digital Minimalism | Bookaffeine",
+        treatmentButton: "Read the Conclusion",
+        conclusionTitle: "Conclusion",
+        conclusionText: "Digital addiction is a condition where technology is used excessively to the point that it negatively affects a person's daily life. This addiction includes the use of electronic devices such as smartphones, the internet, video games, and social media. It leads to health, psychological, and social consequences, as the person may suffer from concentration problems, sleep disorders, depression, and deteriorating social relationships. Young people are the most exposed to this phenomenon due to their increased use of electronic devices....",
+        conclusionButton: "Back to Top"
+      },
+      fr: {
+        headerTitle: "Addiction Numérique",
+        headerSubtitle: "Définition, Symptômes et Traitement",
+        navDefinition: "Définition",
+        navSymptoms: "Symptômes",
+        navTreatment: "Traitement",
+        navConclusion: "Conclusion",
+        definitionTitle: "Définition de l'Addiction Numérique",
+        definitionText: "L'addiction numérique est un état de dépendance excessive aux appareils numériques et à la technologie...",
+        definitionButton: "Découvrir les Symptômes",
+        symptomsTitle: "Symptômes de l'Addiction Numérique",
+        symptomsList: [
+          "<strong>Utilisation Excessive:</strong> Passer de longues heures sur les appareils sans but précis.",
+          "<strong>Négligence des Responsabilités:</strong> Impact sur le travail, les études et les tâches quotidiennes.",
+          "<strong>Impact sur la Santé Mentale:</strong> Sentiments d'anxiété, de stress, de dépression ou de solitude.",
+          "<strong>Impact sur la Santé Physique:</strong> Problèmes de sommeil, douleurs au cou et au dos, et fatigue oculaire.",
+          "<strong>Isolement Social:</strong> Préférer l'interaction numérique à la communication en face à face.",
+          "<strong>Perte de Contrôle du Temps:</strong> Incapacité à contrôler le temps passé sur les appareils.",
+          "<strong>Dépendance Émotionnelle:</strong> Utiliser les appareils comme moyen d'échapper aux problèmes ou aux pressions psychologiques.",
+          "<strong>Effets sur les Enfants et les Adolescents:</strong> Baisse des performances scolaires, difficulté à former des relations et augmentation de l'agressivité ou de l'isolement."
+        ],
+        symptomsButton: "Découvrir le Traitement",
+        treatmentTitle: "Moyens de Traiter l'Addiction Numérique",
+        treatmentList: [
+          "<strong>Fixer des Limites de Temps:</strong> Définir des temps spécifiques pour l'utilisation des appareils numériques et s'y tenir.",
+          "<strong>Pratiquer des Activités Alternatives:</strong> Remplacer le temps passé sur les appareils par des activités bénéfiques comme la lecture, le sport ou les loisirs créatifs.",
+          "<strong>Créer des Zones Sans Appareils:</strong> Désigner des zones dans la maison, comme les chambres ou les tables à manger, comme zones sans appareils.",
+          "<strong>Développer des Habitudes de Sommeil Sain:</strong> Éviter l'utilisation des appareils numériques au moins une heure avant le coucher.",
+          "<strong>Accroître la Conscience du Problème:</strong> Comprendre les effets négatifs de l'addiction numérique sur la santé mentale et physique.",
+          "<strong>Utiliser des Applications d'Aide:</strong> Digital Wellbeing || Screen Time || Forest : Utiliser des applications qui aident à réduire le temps passé sur les appareils numériques.",
+          "<strong>Renforcer les Relations Sociales</strong>"
+        ],
+        treatmentText: "Il existe de nombreux livres qui traitent du sujet de l'addiction numérique, explorant l'impact de la technologie et des réseaux sociaux sur les individus et la société. L'un des livres les plus importants est <strong>\"Digital Minimalism\"</strong> de <strong>Cal Newport</strong>, qui discute de la manière de réduire l'impact de la technologie numérique sur nos vies et propose des conseils pour gérer le temps et les ressources plus efficacement.",
+        videoButtonText: "Explication de Digital Minimalism | Bookaffeine",
+        treatmentButton: "Lire la Conclusion",
+        conclusionTitle: "Conclusion",
+        conclusionText: "L'addiction numérique est une condition où la technologie est utilisée de manière excessive au point d'affecter négativement la vie quotidienne d'une personne. Cette addiction inclut l'utilisation d'appareils électroniques tels que les smartphones, Internet, les jeux vidéo et les réseaux sociaux. Elle entraîne des conséquences sur la santé, psychologiques et sociales, car la personne peut souffrir de problèmes de concentration, de troubles du sommeil, de dépression et de la détérioration des relations sociales. Les jeunes sont les plus exposés à ce phénomène en raison de leur utilisation accrue des appareils électroniques....",
+        conclusionButton: "Retour en Haut"
+      }
+    };
+
+    function changeLanguage(lang) {
+      // Update the <html> lang and dir attributes
+      document.documentElement.lang = lang;
+      document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+
+      // Get the translation for the selected language
+      const translation = translations[lang];
+
+      // Update all text content
+      document.getElementById("header-title").textContent = translation.headerTitle;
+      document.getElementById("header-subtitle").textContent = translation.headerSubtitle;
+      document.getElementById("nav-definition").textContent = translation.navDefinition;
+      document.getElementById("nav-symptoms").textContent = translation.navSymptoms;
+      document.getElementById("nav-treatment").textContent = translation.navTreatment;
+      document.getElementById("nav-conclusion").textContent = translation.navConclusion;
+      document.getElementById("definition-title").textContent = translation.definitionTitle;
+      document.getElementById("definition-text").textContent = translation.definitionText;
+      document.getElementById("definition-button").textContent = translation.definitionButton;
+      document.getElementById("symptoms-title").textContent = translation.symptomsTitle;
+      document.getElementById("symptoms-list").innerHTML = translation.symptomsList.map(item => `<li>${item}</li>`).join("");
+      document.getElementById("symptoms-button").textContent = translation.symptomsButton;
+      document.getElementById("treatment-title").textContent = translation.treatmentTitle;
+      document.getElementById("treatment-list").innerHTML = translation.treatmentList.map(item => `<li>${item}</li>`).join("");
+      document.getElementById("treatment-text").innerHTML = translation.treatmentText;
+      document.getElementById("video-button-text").textContent = translation.videoButtonText;
+      document.getElementById("treatment-button").textContent = translation.treatmentButton;
+      document.getElementById("conclusion-title").textContent = translation.conclusionTitle;
+      document.getElementById("conclusion-text").textContent = translation.conclusionText;
+      document.getElementById("conclusion-button").textContent = translation.conclusionButton;
+    }
+  </script>

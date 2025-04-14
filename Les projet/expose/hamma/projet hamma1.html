@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les compétitions en robotique - Projet Hamma</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .presentation-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .presentation-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .presentation-title {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        
+        .presentation-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin: 2rem 0;
+            color: var(--primary-color);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-color);
+            margin: 0.5rem auto;
+            border-radius: 2px;
+        }
+        
+        .competition-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .competition-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .competition-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-header {
+            background: var(--primary-color);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .card-body {
+            padding: 1.5rem;
+        }
+        
+        .card-body p {
+            margin-bottom: 1rem;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            background: var(--dark-color);
+            color: white;
+            border-radius: 8px;
+            font-size: 1.2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .presentation-title {
+                font-size: 2rem;
+            }
+            
+            .competition-types {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="presentation-container">
+        <header class="presentation-header">
+            <h1 class="presentation-title">Les compétitions en robotique</h1>
+            <p class="presentation-subtitle">Projet : Mohamed Bououni</p>
+        </header>
+        
+        <h2 class="section-title">Les types des compétitions</h2>
+        
+        <div class="competition-types">
+            <div class="competition-card">
+                <div class="card-header">Suiveur de ligne</div>
+                <div class="card-body">
+                    <h3>Robot suiveur de ligne</h3>
+                    <p>Un robot suiveur de ligne est un robot qui a pour but de suivre sa ligne à l'aide des capteurs infrarouges.</p>
+                </div>
+            </div>
+            
+            <div class="competition-card">
+                <div class="card-header">Tout terrain</div>
+                <div class="card-body">
+                    <h3>Robot tout terrain</h3>
+                    <p>Un robot tout-terrain est un robot conçu pour se déplacer sur des terrains difficiles (boue, sable, rochers, neige, etc.)</p>
+                </div>
+            </div>
+            
+            <div class="competition-card">
+                <div class="card-header">Fighter</div>
+                <div class="card-body">
+                    <h3>Robot Fighter</h3>
+                    <p>Un robot fighter (ou robot de combat) est un robot conçu pour affronter d'autres robots ou cibles dans des combats.</p>
+                    <p><em>All The Best Knockouts From BattleBots World Championship 5 | BATTLEBOTS</em></p>
+                </div>
+            </div>
+            
+            <div class="competition-card">
+                <div class="card-header">Junior</div>
+                <div class="card-body">
+                    <h3>Robot junior</h3>
+                    <p>Un robot junior est robot simple programmé et téléguidé par telephone. Il se compose par des moteurs, des roues, et une carte programmable (carte arduino).</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer class="footer">
+            Merci
+        </footer>
+    </div>
+</body>
+</html>

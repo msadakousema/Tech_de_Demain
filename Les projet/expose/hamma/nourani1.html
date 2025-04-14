@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مواقع التواصل الاجتماعي: إيجابيات وسلبيات</title>
+    <style>
+        :root {
+            --primary-color: #1DA1F2; /* Twitter blue */
+            --secondary-color: #4267B2; /* Facebook blue */
+            --accent-color: #E1306C; /* Instagram pink */
+            --light-color: #f5f8fa;
+            --dark-color: #14171A;
+            --text-color: #333;
+            --positive-color: #4CAF50;
+            --negative-color: #F44336;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Tahoma', 'Arial', sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--text-color);
+            line-height: 1.8;
+        }
+        
+        .presentation-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .presentation-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .presentation-title {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .presentation-subtitle {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 3rem 0 2rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--accent-color);
+            margin: 0.8rem auto;
+            border-radius: 2px;
+        }
+        
+        .definition-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 800px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-right: 5px solid var(--primary-color);
+            text-align: center;
+            line-height: 2;
+        }
+        
+        .pros-cons-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .pros-cons-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .pros-card, .cons-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .pros-card:hover, .cons-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .pros-header {
+            background: var(--positive-color);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        
+        .cons-header {
+            background: var(--negative-color);
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+        
+        .point-card {
+            padding: 1.5rem;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .point-card:last-child {
+            border-bottom: none;
+        }
+        
+        .point-icon {
+            margin-left: 1rem;
+            font-size: 1.5rem;
+            min-width: 40px;
+            text-align: center;
+        }
+        
+        .pros-icon {
+            color: var(--positive-color);
+        }
+        
+        .cons-icon {
+            color: var(--negative-color);
+        }
+        
+        .point-content h3 {
+            margin-bottom: 0.5rem;
+            color: var(--dark-color);
+        }
+        
+        .sources-section {
+            background: var(--light-color);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 3rem;
+        }
+        
+        .sources-title {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--dark-color);
+        }
+        
+        .sources-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            list-style: none;
+        }
+        
+        .source-item {
+            background: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            background: var(--dark-color);
+            color: white;
+            border-radius: 10px;
+            font-size: 1.2rem;
+        }
+        
+        /* RTL specific styles */
+        body[dir="rtl"] {
+            text-align: right;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="presentation-container">
+        <header class="presentation-header">
+            <h1 class="presentation-title">مواقع التواصل الاجتماعي</h1>
+            <p class="presentation-subtitle"> تقديم : محمد بوعوني</p>
+        </header>
+        
+        <div class="definition-card">
+            <h2 class="section-title">تعريف مواقع التواصل الاجتماعي</h2>
+            <p>تُعرّف وسائل التواصل الاجتماعي بأنّها التطبيقات والمواقع الإلكترونية التي تُستخدم للتواصل مع الآخرين، ونشر المعلومات عبر شبكة الإنترنت العالمية من خلال أجهزة الكمبيوتر أو الهواتف المحمولة.</p>
+        </div>
+        
+        <h2 class="section-title">إيجابيات وسلبيات مواقع التواصل</h2>
+        
+        <div class="pros-cons-container">
+            <div class="pros-card">
+                <div class="pros-header">إيجابيات مواقع التواصل الاجتماعي</div>
+                
+                <div class="point-card">
+                    <div class="point-icon pros-icon"><i class="fas fa-users"></i></div>
+                    <div class="point-content">
+                        <h3>إمكانية التواصل مع الآخرين</h3>
+                        <p>تمكننا من التعرف على الآخرين والتواصل معهم وإنشاء صداقات مع الأشخاص حول العالم</p>
+                    </div>
+                </div>
+                
+                <div class="point-card">
+                    <div class="point-icon pros-icon"><i class="fas fa-shopping-cart"></i></div>
+                    <div class="point-content">
+                        <h3>التسويق الالكتروني</h3>
+                        <p>تمكّن هذه المواقع الشركات من الوصول إلى عدد أكبر من الزبائن وزيادة مبيعاتها</p>
+                    </div>
+                </div>
+                
+                <div class="point-card">
+                    <div class="point-icon pros-icon"><i class="fas fa-newspaper"></i></div>
+                    <div class="point-content">
+                        <h3>التعرف على أخبار العالم</h3>
+                        <p>نستطيع بفضل هذه المواقع البقاء على اطلاع دائم ومستمر بجميع الأحداث الواقعة أولاً بأول</p>
+                    </div>
+                </div>
+                
+                <div class="point-card">
+                    <div class="point-icon pros-icon"><i class="fas fa-hands-helping"></i></div>
+                    <div class="point-content">
+                        <h3>مساعدة الأشخاص حول العالم</h3>
+                        <p>يمكن استخدام منصات التواصل الاجتماعي لفت الانتباه نحو مشكلة معينة وتحريك الرأي العام</p>
+                    </div>
+                </div>
+                
+                <div class="point-card">
+                    <div class="point-icon pros-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="point-content">
+                        <h3>تساعد في عملية التعلم الذاتي</h3>
+                        <p>توسع هذه المواقع دائرة معارفنا وثقافتنا، وتساعدنا على التعلم بشكل مجاني</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="cons-card">
+                <div class="cons-header">سلبيات مواقع التواصل الاجتماعي</div>
+                
+                <div class="point-card">
+                    <div class="point-icon cons-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                    <div class="point-content">
+                        <h3>الإدمان</h3>
+                        <p>يمكن أن تتحول وسائل التواصل إلى إدمان مما يقلل من الإنتاجية ويؤثر على أداء العمل والدراسة</p>
+                    </div>
+                </div>
+                
+                <div class="point-card">
+                    <div class="point-icon cons-icon"><i class="fas fa-heartbeat"></i></div>
+                    <div class="point-content">
+                        <h3>التأثير السلبي على الصحة</h3>
+                        <p>إجهاد العينين بسبب التحديق المستمر في الشاشات، اضطرابات النوم نتيجة استخدام الهاتف قبل النوم</p>
+                    </div>
+                </div>
+                
+                <div class="point-card">
+                    <div class="point-icon cons-icon"><i class="far fa-clock"></i></div>
+                    <div class="point-content">
+                        <h3>هدر الوقت</h3>
+                        <p>من الممكن قضاء ساعات طويلة على مواقع التواصل الاجتماعي دون إدراك الوقت المهدور</p>
+                    </div>
+                </div>
+                
+                <div class="point-card">
+                    <div class="point-icon cons-icon"><i class="fas fa-info-circle"></i></div>
+                    <div class="point-content">
+                        <h3>نشر المعلومات الخاطئة</h3>
+                        <p>هناك الكثير من الأخبار والمعلومات التي تنتشر على هذه المواقع دون التأكد من صحتها</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="sources-section">
+            <h3 class="sources-title">المصادر</h3>
+            <ul class="sources-list">
+                <li class="source-item">Youtube</li>
+                <li class="source-item">Chat GPT</li>
+                <li class="source-item">Mawdoo3</li>
+                <li class="source-item">Google</li>
+            </ul>
+        </div>
+        
+        <footer class="footer">
+            شكراً لكم
+        </footer>
+    </div>
+</body>
+</html>
