@@ -1,6 +1,6 @@
 .project-content {
   padding-top: calc(var(--navbar-height) + 2rem);
-  max-width: 1200px;
+  max-width: 1250px;
   margin: 0 auto;
   padding-inline: 1rem;
 }
@@ -212,6 +212,9 @@
     flex-direction: column;
     text-align: center;
   }
+  .btn-download.fill-download {
+    width: 100%;
+  }
 
   .project-info h1 {
     font-size: 2rem;
@@ -240,9 +243,7 @@
   }
 }
 
-.image,
-.image-container,
-.card {
+.image {
   width: 100%;
   height: clamp(280px, calc(40vh + 15vw), 700px);
   display: flex;
@@ -258,9 +259,6 @@
   backdrop-filter: blur(8px);
   box-shadow: var(--shadow-md);
   transition: transform 0.3s var(--easing), box-shadow 0.3s ease;
-}
-.card {
-  margin: 0;
 }
 
 .image:hover {

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,6 +7,25 @@
     <link rel="stylesheet" href="../CSS/styles.css" />
     <link rel="stylesheet" href="../CSS/project.css" />
     <link rel="icon" href="../Images/Icons/play.png" />
+    <style>
+      .image-container{
+        width: 100%;
+        height: clamp(280px, calc(40vh + 15vw), 700px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        border-radius: 1.8rem;
+        background: var(--card-bg);
+        margin-block: 1rem 2rem;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid var(--card-border);
+        backdrop-filter: blur(8px);
+        box-shadow: var(--shadow-md);
+        transition: transform 0.3s var(--easing), box-shadow 0.3s ease;
+      }
+    </style>
   </head>
   <body>
     <div id="loader">
@@ -291,7 +310,7 @@
 
       <section class="project-section">
         <h2>Les dangers</h2>
-        <div class="topic-grid">
+        <div class="topics-grid">
             <div class="topic-card">
                 <ul>
                   <li>Addiction aux jeux vidéo</li>
