@@ -79,6 +79,18 @@
 .next-button:hover svg {
   margin-left: 6px;
 }
+.back-button:active,
+.next-button:active,
+.back-button:focus,
+.next-button:focus {
+  transform: scale(0.95);
+}
+.back-button:active svg,
+.next-button:active svg,
+.back-button:focus svg,
+.next-button:focus svg {
+  margin-inline: -4px;
+}
 
 .navigation-buttons {
   display: flex;
@@ -910,4 +922,230 @@ tbody tr:nth-child(odd) td:not([rowspan]) {
   width: 36px;
   height: 36px;
   stroke: var(--accent-secondary);
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  height: 6px;
+  background: var(--bg-secondary);
+  border-radius: 4px;
+  outline: none;
+  transition: background 0.3s ease;
+}
+
+/* Webkit - Chrome, Safari, Edge */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--button);
+  border: 2px solid var(--card-border);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  background: var(--button-hover);
+  transform: scale(1.1);
+}
+
+/* Firefox */
+input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--button);
+  border: 2px solid var(--card-border);
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+input[type="range"]::-moz-range-thumb:hover {
+  background: var(--button-hover);
+  transform: scale(1.1);
+}
+
+input[type="range"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--button-hover-transparent);
+}
+
+/* Firefox track */
+input[type="range"]::-moz-range-track {
+  background: var(--bg-secondary);
+  height: 6px;
+  border-radius: 4px;
+}
+
+/* Webkit track */
+input[type="range"]::-webkit-slider-runnable-track {
+  background: var(--bg-secondary);
+  height: 6px;
+  border-radius: 4px;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
+}
+
+.checkbox-container label {
+  cursor: pointer;
+}
+
+.checkbox input[type="checkbox"] {
+  display: none; /* Hide the default checkbox */
+}
+
+.checkbox {
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+  margin-right: 0.5rem;
+  border-radius: 6px;
+  border: 2px solid var(--card-border);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease, 0.2s border cubic-bezier(0.26, 0.62, 0.43, 1.06);
+  cursor: pointer;
+}
+
+.checkbox::before {
+  content: "";
+  position: absolute;
+  top: 232%;
+  left: 50%;
+  transform: translate(-50%, -100%) scale(0.75);
+  border-radius: 50% 20% / 30% 70%;
+  width: 115%;
+  height: 115%;
+  filter: blur(4px);
+  background: var(--accent-secondary);
+  z-index: 1;
+  transition: transform 0.56s cubic-bezier(0.5, 0.26, 0.7, 1.8), top 0.38s ease,
+    filter 0.48s ease;
+}
+
+.checkbox::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  height: 75%;
+  clip-path: polygon(
+    41% 52%,
+    26% 35%,
+    10% 51%,
+    37% 88%,
+    37% 88%,
+    37% 88%,
+    37% 88%,
+    91% 33%,
+    78% 18%
+  );
+  background: var(--text-primary);
+  z-index: 1;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.93, 0.17, 0.43, 1.07);
+}
+
+.checkbox-container:has(.checkbox input[type="checkbox"]:checked)
+  .checkbox::before {
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  filter: blur(0px);
+}
+
+.checkbox-container:has(.checkbox input[type="checkbox"]:checked)
+  .checkbox::after {
+  opacity: 1;
+  transform: translate(-50%, -50%) perspective(70px) scale(1);
+  animation: checkmarkAnimation 0.5s ease-in-out forwards;
+}
+
+.checkbox:has(input[type="checkbox"]:checked) {
+  border: 0px solid;
+}
+
+@keyframes checkmarkAnimation {
+  0% {
+    opacity: 0;
+    transform: perspective(70px) translate(10%, -20%) rotate(43deg)
+      rotateY(100deg) scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: perspective(70px) translate(-57%, -42%) rotate(32deg)
+      rotateY(55deg) scale(1.32);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(70px) translate(-50%, -50%) rotate(0deg)
+      rotateY(0deg) scale(1);
+  }
+}
+
+.input {
+  -webkit-appearance: none;
+  display: block;
+  margin: 10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  vertical-align: middle;
+
+  box-shadow: rgba(255, 255, 255, 0.15) 0 1px 1px,
+    inset var(--card-border) 0 0 0 1px;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  background-image: -webkit-radial-gradient(
+    var(--accent-secondary) 0%,
+    var(--accent-secondary) 15%,
+    rgba(46, 230, 164, 0.3) 28%,
+    rgba(46, 230, 164, 0) 70%
+  );
+
+  background-repeat: no-repeat;
+  -webkit-transition: background-position 0.15s cubic-bezier(0.8, 0, 1, 1),
+    -webkit-transform 0.25s cubic-bezier(0.8, 0, 1, 1);
+  outline: none;
+}
+.lightmode .input {
+  background-image: -webkit-radial-gradient(
+    var(--button) 0%,
+    var(--button-hover) 25%,
+    rgba(126, 107, 255, 0.75) 50%,
+    rgba(126, 107, 255, 0.4) 75%
+  );
+}
+
+.input:checked {
+  -webkit-transition: background-position 0.2s 0.15s cubic-bezier(0, 0, 0.2, 1),
+    -webkit-transform 0.25s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.input:active {
+  -webkit-transform: scale(1.5);
+  -webkit-transition: -webkit-transform 0.1s cubic-bezier(0, 0, 0.2, 1);
+}
+
+.input,
+.input:active {
+  background-position: 0 24px;
+}
+
+.input:checked {
+  background-position: 0 0;
+}
+
+.input:checked ~ .input,
+.input:checked ~ .input:active {
+  background-position: 0 -24px;
 }

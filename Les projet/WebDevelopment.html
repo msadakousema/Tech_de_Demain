@@ -6,7 +6,12 @@
     <title>Développement Frontend</title>
     <link rel="stylesheet" href="../CSS/styles.css" />
     <link rel="stylesheet" href="../CSS/project.css" />
-    <link rel="icon" href="../Images/Icons/code.png" >>
+    <link rel="icon" href="../Images/Icons/code.png" >
+    <style>
+      .topic-card ul :first-child {
+        font-weight: bold;
+      }
+    </style>
   </head>
   <body>
 		<div id="loader">
@@ -377,7 +382,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2025 InfoGen². Tous droits réservés.</p>
+          <p>&copy; <span id="current-year"></span> InfoGen². Tous droits réservés.</p>
         </div>
       </footer>
 		<script src="../Javascript/main.js"></script>

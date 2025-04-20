@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dernières évolutions des appareils intelligents</title>
+    <link rel="stylesheet" href="../CSS/styles.css" />
+    <link rel="stylesheet" href="../CSS/project.css" />
+    <link rel="icon" href="../../Images/Icons/robot icon.png" />
+    <style>
+      .image-container{
+        width: 100%;
+        height: clamp(280px, calc(40vh + 15vw), 700px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+        border-radius: 1.8rem;
+        background: var(--card-bg);
+        margin-block: 1rem 2rem;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid var(--card-border);
+        backdrop-filter: blur(8px);
+        box-shadow: var(--shadow-md);
+        transition: transform 0.3s var(--easing), box-shadow 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loader">
+      <svg xmlns="http://www.w3.org/2000/svg" height="200px" width="200px" viewBox="0 0 200 200" class="pencil">
+        <defs>
+          <clipPath id="pencil-eraser">
+            <rect height="30" width="30" ry="5" rx="5"></rect>
+          </clipPath>
+        </defs>
+        <circle transform="rotate(-113,100,100)" stroke-linecap="round" stroke-dashoffset="439.82" stroke-dasharray="439.82 439.82" stroke-width="2" stroke="currentColor" fill="none" r="70" class="pencil__stroke"></circle>
+        <g transform="translate(100,100)" class="pencil__rotate">
+          <g fill="none">
+            <circle transform="rotate(-90)" stroke-dashoffset="402" stroke-dasharray="402.12 402.12" stroke-width="30" stroke="hsl(223,90%,50%)" r="64" class="pencil__body1"></circle>
+            <circle transform="rotate(-90)" stroke-dashoffset="465" stroke-dasharray="464.96 464.96" stroke-width="10" stroke="hsl(223,90%,60%)" r="74" class="pencil__body2"></circle>
+            <circle transform="rotate(-90)" stroke-dashoffset="339" stroke-dasharray="339.29 339.29" stroke-width="10" stroke="hsl(223,90%,40%)" r="54" class="pencil__body3"></circle>
+          </g>
+          <g transform="rotate(-90) translate(49,0)" class="pencil__eraser">
+            <g class="pencil__eraser-skew">
+              <rect height="30" width="30" ry="5" rx="5" fill="hsl(223,90%,70%)"></rect>
+              <rect clip-path="url(#pencil-eraser)" height="30" width="5" fill="hsl(223,90%,60%)"></rect>
+              <rect height="20" width="30" fill="hsl(223,10%,90%)"></rect>
+              <rect height="20" width="15" fill="hsl(223,10%,70%)"></rect>
+              <rect height="20" width="5" fill="hsl(223,10%,80%)"></rect>
+              <rect height="2" width="30" y="6" fill="hsla(223,10%,10%,0.2)"></rect>
+              <rect height="2" width="30" y="13" fill="hsla(223,10%,10%,0.2)"></rect>
+            </g>
+          </g>
+          <g transform="rotate(-90) translate(49,-30)" class="pencil__point">
+            <polygon points="15 0,30 30,0 30" fill="hsl(33,90%,70%)"></polygon>
+            <polygon points="15 0,6 30,0 30" fill="hsl(33,90%,50%)"></polygon>
+            <polygon points="15 0,20 10,10 10" fill="hsl(223,10%,10%)"></polygon>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <nav class="navbar">
+      <div class="nav-content">
+        <a href="#" class="logo">
+          <div class="logo-box">
+              <span>IG²</span>
+          </div>
+          <span>InfoGen</span><sup>²</sup>
+      </a>
+        <section class="nav-links">
+          <div class="nav-icons">
+            <a href="../index.html">
+              <div class="animated">
+                <div class="fill-up">
+                  <div class="account">
+                    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 64 64" width="96px" height="96px">
+                      <path d="M 32 8 C 31.08875 8 30.178047 8.3091875 29.435547 8.9296875 L 8.8007812 26.171875 C
+                      8.0357812 26.810875 7.7634844 27.925203 8.2714844 28.783203 C 8.9184844 29.875203 10.35025 30.088547
+                       11.28125 29.310547 L 31.677734 12.269531 C 31.864734 12.113531 32.135266 12.113531 32.322266
+                        12.269531 L 52.71875 29.3125 C 53.09275 29.6255 53.546047 29.777344 53.998047 29.777344
+                        C 54.693047 29.777344 55.382672 29.416656 55.763672 28.722656 C 56.228672 27.874656 55.954891
+                        26.803594 55.212891 26.183594 L 52 23.498047 L 52 15 C 52 13.895 51.105 13 50 13 L 48 13 C 46.895
+                        13 46 13.895 46 15 L 46 18.484375 L 34.564453 8.9296875 C 33.821953 8.3091875 32.91125 8 32 8 z
+                         M 32 16 L 12 32.705078 L 12 47 C 12 49.761 14.239 52 17 52 L 47 52 C 49.761 52 52 49.761 52 47
+                         L 52 32.705078 L 32 16 z M 28 32 L 36 32 C 37.105 32 38 32.895 38 34 L 38 48 L 26 48 L 26 34 C
+                         26 32.895 26.895 32 28 32 z"/></svg>
+                    </svg>
+                    <p class="text">Accueil</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="../Sujets.html">
+              <div class="animated">
+                <div class="fill-up">
+                  <div class="account">
+                    <svg class="stroke" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open h-4 w-4 mr-2" data-lov-id="src/components/Navbar.tsx:68:14" data-lov-name="BookOpen" data-component-path="src/components/Navbar.tsx" data-component-line="68" data-component-file="Navbar.tsx" data-component-name="BookOpen" data-component-content="%7B%22className%22%3A%22h-4%20w-4%20mr-2%22%7D"><path d="M12 7v14"></path><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path></svg>
+                    <p class="text">Sujets</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="../Contact.html">
+              <div class="animated">
+                <div class="fill-up">
+                  <div class="account">
+                    <svg class="stroke" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail h-4 w-4 mr-2" data-lov-id="src/components/Navbar.tsx:79:14" data-lov-name="Mail" data-component-path="src/components/Navbar.tsx" data-component-line="79" data-component-file="Navbar.tsx" data-component-name="Mail" data-component-content="%7B%22className%22%3A%22h-4%20w-4%20mr-2%22%7D"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                    <p class="text">Contact</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="side-nav">
+              <div>
+                <button class="switch" id="theme-toggle" aria-label="Toggle theme">
+                  <div class="circle"></div>
+                  <svg class="moon svg" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"></path>
+                  </svg>
+                  <div class="sun svg">
+                    <span class="dot"></span>
+                  </div>
+                </button>
+              </div>
+              <button class="toggle" aria-label="Toggle menu">
+                <div class="bars" id="bar1"></div>
+                <div class="bars" id="bar2"></div>
+                <div class="bars" id="bar3"></div>
+              </button>
+            </div>
+      </div>
+    </nav>
+    <main class="project-content">
+      <header class="project-header">
+        <div class="header-content">
+          <div class="project-info">
+            <h1>Dernières évolutions des appareils intelligents</h1>
+            <div class="metadata">
+              <span class="student-name">Par: Raslen Arfaoui</span>
+              <span class="project-date">Présenté le : 13/02/2025</span>
+            </div>
+          </div>
+          <div class="header-buttons">
+            <a href="../Sujets.html" class="back-button hero">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+              </svg>
+              Retour aux sujets
+            </a>
+          </div>
+        </div>
+      </header>
+
+          <section class="project-section">
+            <h2>Introduction au monde des appareils intelligents :</h2>
+            <p>
+              Les appareils intelligents évoluent très rapidement et deviennent une
+              partie importante de notre vie. Des téléphones aux montres connectées
+              en passant par les appareils électroménagers, cette technologie rend
+              notre vie plus facile et plus confortable. Grâce à l'intelligence
+              artificielle et à l'Internet des objets, les appareils sont devenus
+              plus intelligents et plus capables de nous aider dans nos tâches
+              quotidiennes.
+            </p>
+          </section>
+          <div class="image-container">
+            <img src="../Images/phone.jpg" alt="Smartphone" />
+            <img src="../Images/computer.jfif" alt="Appareil intelligent 2" />
+            <img
+              src="../Images/washing machine.jpg"
+              alt="Machine à laver intelligente"
+            />
+          </div>
+          <section class="project-section">
+            <h2>Dernières évolutions dans les appareils intelligents :</h2>
+            <div class="topics-grid">
+              <div class="topic-card">
+                <ul class="features">
+                  <li>
+                    Téléphones intelligents : écrans pliables, caméras avancées, mémoire
+                    plus grande
+                  </li>
+                  <li>
+                    Appareils portables : montres intelligentes, lunettes intelligentes
+                  </li>
+                  <li>
+                    Maisons intelligentes : systèmes d’éclairage, de chauffage et de
+                    sécurité connectés
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+          <section class="project-section">
+            <h3>
+              Les entreprises les plus célèbres dans la production d'appareils
+              intelligents
+            </h3>
+            <div class="table-container">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Nom de l'entreprise</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Redmi</td></tr>
+                    <tr>
+                      <td>Infinix</td>
+                    </tr>
+                    <tr>
+                      <td>Apple</td>
+                    </tr>
+                    <tr>
+                      <td>Samsung</td>
+                    </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="project-section">
+            <h2>Intelligence artificielle et Internet des objets</h2>
+            <p>
+              Le rôle de l'intelligence artificielle dans l'amélioration des
+              performances des appareils intelligents. Exemples : assistants vocaux
+              comme Google Assistant, Siri. Internet des objets : comment les
+              appareils se connectent entre eux pour améliorer l'efficacité.
+              Exemples : climatiseurs intelligents, réfrigérateurs connectés.
+            </p>
+
+          </section>
+
+          <section class="project-section">
+            <h2>Prévisions futures :</h2>
+    
+            <p>
+              Dans le futur, on s’attend à ce que les appareils intelligents
+              deviennent encore plus avancés et mieux intégrés dans notre vie
+              quotidienne. Grâce aux progrès de l’intelligence artificielle et de
+              l’Internet des objets, nous verrons des appareils capables de mieux
+              comprendre nos besoins et d’offrir des solutions personnalisées. Par
+              exemple, les voitures autonomes pourraient devenir plus répandues, et
+              les appareils intelligents joueront un rôle plus important dans des
+              domaines comme la santé et l’éducation. De plus, la technologie
+              continuera d’améliorer l’efficacité énergétique et de réduire l’impact
+              environnemental, rendant notre vie plus durable.
+            </p>
+
+          </section>
+
+        <div class="navigation-buttons">
+          <a href="Digital nav.html" class="back-button hero">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Projet Précédent
+          </a>
+          <a href="Intelligence artificielle.html" class="next-button hero">
+            Page Suivant
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+    </main>
+
+      <footer class="footer">
+        <div class="footer-content">
+          <header>
+            <a href="#" class="logo">
+              <div class="logo-box">
+                  <span>IG²</span>
+              </div>
+              <span>InfoGen</span><sup>²</sup>
+            </a>
+          </header>
+          <div>
+            <div class="footer-section">
+              <h3>À Propos</h3>
+              <p>InfoGen² – Un projet collaboratif des élèves de 2ᵉ année informatique,
+                 explorant l’IA, la cybersécurité et la programmation 🚀...
+                 Chaque élève y conçoit et présente son propre projet, rassemblé dans ce site web.</p>
+            </div>
+            <div class="footer-section">
+              <h3>Liens Rapides</h3>
+              <ul>
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="../Sujets.html">Sujets</a></li>
+                <li><a href="../Contact.html">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footer-section">
+              <h3>Crédits</h3>
+              <ul>
+                <li><strong>Chef de projet :</strong>
+                  <a href="https://www.instagram.com/real_jihed" target="_blank"> Jihed Khmili</a>
+                </li>
+                <li><strong>Assistant :</strong>
+                   <a href="https://www.instagram.com/rayen_zhaya" target="_blank">Mohamed Rayen Zhaya</a>
+                </li>
+                <li><strong>Assistant CSS 1 :</strong>
+                   <a href="https://www.instagram.com/oussama.msadak/" target="_blank">Oussema Msadak</a>
+                </li>
+                <li><strong>Assistant CSS 2:</strong>
+                   <a href="https://www.instagram.com/0marr_aloui" target="_blank">Mohamed Omar Aloui</a>
+                </li>
+              </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; <span id="current-year"></span> InfoGen². Tous droits réservés.</p>
+        </div>
+      </footer>
+    <script src="../Javascript/main.js"></script>
+    <script src="../Javascript/carousel.js"></script>
+  </body>
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comment créer des jeux vidéo</title>
+    <link rel="stylesheet" href="../CSS/styles.css" />
+    <link rel="stylesheet" href="../CSS/project.css" />
+    <link rel="icon" href="../Images/Icons/play.png" />
+    <style>
+      .platform-logo {
+        width: 30px; /* Adjust the size as necessary */
+        height: auto;
+        margin-right: 10px;
+        vertical-align: middle;
+        padding-block: 3px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loader">
+      <svg xmlns="http://www.w3.org/2000/svg" height="200px" width="200px" viewBox="0 0 200 200" class="pencil">
+        <defs>
+          <clipPath id="pencil-eraser">
+            <rect height="30" width="30" ry="5" rx="5"></rect>
+          </clipPath>
+        </defs>
+        <circle transform="rotate(-113,100,100)" stroke-linecap="round" stroke-dashoffset="439.82" stroke-dasharray="439.82 439.82" stroke-width="2" stroke="currentColor" fill="none" r="70" class="pencil__stroke"></circle>
+        <g transform="translate(100,100)" class="pencil__rotate">
+          <g fill="none">
+            <circle transform="rotate(-90)" stroke-dashoffset="402" stroke-dasharray="402.12 402.12" stroke-width="30" stroke="hsl(223,90%,50%)" r="64" class="pencil__body1"></circle>
+            <circle transform="rotate(-90)" stroke-dashoffset="465" stroke-dasharray="464.96 464.96" stroke-width="10" stroke="hsl(223,90%,60%)" r="74" class="pencil__body2"></circle>
+            <circle transform="rotate(-90)" stroke-dashoffset="339" stroke-dasharray="339.29 339.29" stroke-width="10" stroke="hsl(223,90%,40%)" r="54" class="pencil__body3"></circle>
+          </g>
+          <g transform="rotate(-90) translate(49,0)" class="pencil__eraser">
+            <g class="pencil__eraser-skew">
+              <rect height="30" width="30" ry="5" rx="5" fill="hsl(223,90%,70%)"></rect>
+              <rect clip-path="url(#pencil-eraser)" height="30" width="5" fill="hsl(223,90%,60%)"></rect>
+              <rect height="20" width="30" fill="hsl(223,10%,90%)"></rect>
+              <rect height="20" width="15" fill="hsl(223,10%,70%)"></rect>
+              <rect height="20" width="5" fill="hsl(223,10%,80%)"></rect>
+              <rect height="2" width="30" y="6" fill="hsla(223,10%,10%,0.2)"></rect>
+              <rect height="2" width="30" y="13" fill="hsla(223,10%,10%,0.2)"></rect>
+            </g>
+          </g>
+          <g transform="rotate(-90) translate(49,-30)" class="pencil__point">
+            <polygon points="15 0,30 30,0 30" fill="hsl(33,90%,70%)"></polygon>
+            <polygon points="15 0,6 30,0 30" fill="hsl(33,90%,50%)"></polygon>
+            <polygon points="15 0,20 10,10 10" fill="hsl(223,10%,10%)"></polygon>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <nav class="navbar">
+      <div class="nav-content">
+        <a href="#" class="logo">
+          <div class="logo-box">
+              <span>IG²</span>
+          </div>
+          <span>InfoGen</span><sup>²</sup>
+      </a>
+        <section class="nav-links">
+          <div class="nav-icons">
+            <a href="../index.html">
+              <div class="animated">
+                <div class="fill-up">
+                  <div class="account">
+                    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 64 64" width="96px" height="96px">
+                      <path d="M 32 8 C 31.08875 8 30.178047 8.3091875 29.435547 8.9296875 L 8.8007812 26.171875 C
+                      8.0357812 26.810875 7.7634844 27.925203 8.2714844 28.783203 C 8.9184844 29.875203 10.35025 30.088547
+                       11.28125 29.310547 L 31.677734 12.269531 C 31.864734 12.113531 32.135266 12.113531 32.322266
+                        12.269531 L 52.71875 29.3125 C 53.09275 29.6255 53.546047 29.777344 53.998047 29.777344
+                        C 54.693047 29.777344 55.382672 29.416656 55.763672 28.722656 C 56.228672 27.874656 55.954891
+                        26.803594 55.212891 26.183594 L 52 23.498047 L 52 15 C 52 13.895 51.105 13 50 13 L 48 13 C 46.895
+                        13 46 13.895 46 15 L 46 18.484375 L 34.564453 8.9296875 C 33.821953 8.3091875 32.91125 8 32 8 z
+                         M 32 16 L 12 32.705078 L 12 47 C 12 49.761 14.239 52 17 52 L 47 52 C 49.761 52 52 49.761 52 47
+                         L 52 32.705078 L 32 16 z M 28 32 L 36 32 C 37.105 32 38 32.895 38 34 L 38 48 L 26 48 L 26 34 C
+                         26 32.895 26.895 32 28 32 z"/></svg>
+                    </svg>
+                    <p class="text">Accueil</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="../Sujets.html">
+              <div class="animated">
+                <div class="fill-up">
+                  <div class="account">
+                    <svg class="stroke" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open h-4 w-4 mr-2" data-lov-id="src/components/Navbar.tsx:68:14" data-lov-name="BookOpen" data-component-path="src/components/Navbar.tsx" data-component-line="68" data-component-file="Navbar.tsx" data-component-name="BookOpen" data-component-content="%7B%22className%22%3A%22h-4%20w-4%20mr-2%22%7D"><path d="M12 7v14"></path><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path></svg>
+                    <p class="text">Sujets</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="../Contact.html">
+              <div class="animated">
+                <div class="fill-up">
+                  <div class="account">
+                    <svg class="stroke" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail h-4 w-4 mr-2" data-lov-id="src/components/Navbar.tsx:79:14" data-lov-name="Mail" data-component-path="src/components/Navbar.tsx" data-component-line="79" data-component-file="Navbar.tsx" data-component-name="Mail" data-component-content="%7B%22className%22%3A%22h-4%20w-4%20mr-2%22%7D"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                    <p class="text">Contact</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="side-nav">
+              <div>
+                <button class="switch" id="theme-toggle" aria-label="Toggle theme">
+                  <div class="circle"></div>
+                  <svg class="moon svg" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"></path>
+                  </svg>
+                  <div class="sun svg">
+                    <span class="dot"></span>
+                  </div>
+                </button>
+              </div>
+              <button class="toggle" aria-label="Toggle menu">
+                <div class="bars" id="bar1"></div>
+                <div class="bars" id="bar2"></div>
+                <div class="bars" id="bar3"></div>
+              </button>
+            </div>
+      </div>
+    </nav>
+    <main class="project-content">
+      <header class="project-header">
+        <div class="header-content">
+          <div class="project-info">
+            <h1>Comment créer des jeux vidéo</h1>
+            <div class="metadata">
+              <span class="student-name">Par: Rayen Zhaya</span>
+            </div>
+          </div>
+          <div class="header-buttons">
+            <a href="../Sujets.html" class="back-button hero">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+              </svg>
+              Retour aux sujets
+            </a>
+          </div>
+        </div>
+      </header>
+
+        <section class="project-section">
+          <h2>Outils nécessaires pour créer des jeux vidéo</h2>
+          <p>
+            La création de jeux vidéo nécessite divers outils selon le type de jeu
+            que tu souhaites concevoir. Voici les outils et logiciels de base
+            utilisés par les développeurs de jeux :
+          </p>
+        </section>
+
+        <section class="project-section">
+          <h2>1. Moteurs de jeu :</h2>
+          <div class="topics-grid">
+            <div class="topic-card">
+              <ul>
+                <li>
+                  <img src="../Images/Rayen Zhaya/unity.jpg" alt="Logo Unity" class="platform-logo" />
+                  <strong>Unity</strong> – L’un des moteurs les plus populaires, idéal
+                  pour les jeux 2D et 3D. Il utilise le langage C#.
+                </li>
+                <li>
+                  <img
+                    src="../Images/Rayen Zhaya/Unreal Engine.png"
+                    alt="Logo Unreal Engine"
+                    class="platform-logo"
+                  />
+                  <strong>Unreal Engine</strong> – Connu pour ses graphismes de haute
+                  qualité, idéal pour les jeux 3D. Il utilise le C++ et les
+                  Blueprints.
+                </li>
+                <li>
+                  <img src="../Images/Rayen Zhaya/Godot_icon.jpg" alt="Logo Godot" class="platform-logo" />
+                  <strong>Godot</strong> – Moteur gratuit et open source, idéal pour
+                  les jeux 2D et 3D. Il utilise le GDScript, similaire à Python.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="project-section">
+          <h2>2. Langages de programmation :</h2>
+          <div class="topics-grid">
+            <div class="topic-card">
+              <ul>
+                <li>
+                  <img src="../Images/Rayen Zhaya/c sharp.jpg" alt="Logo C#" class="platform-logo" />
+                  <strong>C#</strong> – Utilisé avec Unity pour la programmation des
+                  jeux.
+                </li>
+                <li>
+                  <img src="../Images/Rayen Zhaya/c++.jpg" alt="Logo C++" class="platform-logo" />
+                  <strong>C++</strong> – Utilisé avec Unreal Engine, puissant pour les
+                  jeux exigeants en performances.
+                </li>
+                <li>
+                  <img src="../Images/Rayen Zhaya/python.jpg" alt="Logo Python" class="platform-logo" />
+                  <strong>Python</strong> – Langage polyvalent utilisé avec certains
+                  moteurs comme Godot.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="project-section">
+          <h2>3. Logiciels de graphisme et design :</h2>
+          <div class="topics-grid">
+            <div class="topic-card">
+              <ul>
+                <li>
+                  <img
+                    src="../Images/Rayen Zhaya/photoshop.png"
+                    alt="Logo Photoshop"
+                    class="platform-logo"
+                  />
+                  <strong>Photoshop</strong> – Utilisé pour créer des sprites 2D, des
+                  textures et des interfaces utilisateur.
+                </li>
+                <li>
+                  <img src="../Images/Rayen Zhaya/blender.jpg" alt="Logo Blender" class="platform-logo" />
+                  <strong>Blender</strong> – Outil gratuit pour modéliser en 3D,
+                  animer et texturer.
+                </li>
+                <li>
+                  <img
+                    src="../Images/Rayen Zhaya/Aserprite.png"
+                    alt="Logo Aseprite"
+                    class="platform-logo"
+                  />
+                  <strong>Aseprite</strong> – Logiciel de pixel art pour les
+                  graphismes rétro et les animations.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="project-section">
+          <h2>4. Outils de design sonore :</h2>
+          <div class="topics-grid">
+            <div class="topic-card">
+              <ul>
+                <li>
+                  <img
+                    src="../Images/Rayen Zhaya/Audacity.png"
+                    alt="Logo Audacity"
+                    class="platform-logo"
+                  />
+                  <strong>Audacity</strong> – Logiciel gratuit pour enregistrer et
+                  éditer les effets sonores et voix off.
+                </li>
+                <li>
+                  <img
+                    src="../Images/Rayen Zhaya/fl studio.png"
+                    alt="Logo FL Studio"
+                    class="platform-logo"
+                  />
+                  <strong>FL Studio</strong> – Station audio numérique pour composer
+                  la musique de ton jeu.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="project-section">
+          <div class="topics-grid">
+            <div class="topic-card">
+              <h2>5. Plateformes de publication :</h2>
+              <ul>
+                <li>
+                  <img src="../Images/Rayen Zhaya/steam.jpg" alt="Logo Steam" class="platform-logo" />
+                  <strong>Steam</strong> – Plateforme pour publier et distribuer ton
+                  jeu fini.
+                </li>
+                <li>
+                  <img
+                    src="../Images/Rayen Zhaya/itch.png"
+                    alt="Logo itch.io"
+                    class="platform-logo"
+                  />
+                  <strong>itch.io</strong> – Plateforme pour les développeurs
+                  indépendants pour publier et vendre leurs jeux.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+      <section class="project-section">
+        <h2 style="font-size: var(--font-size);">Comment créer un jeu vidéo</h2>
+        <p style="font-size: 1.1rem;">
+          Dans cette vidéo, tu apprendras à créer ton propre jeu vidéo depuis le
+          début en utilisant les bons outils et techniques. Regarde la vidéo et
+          suis les étapes !
+        </p>
+      </section>
+
+      <!-- Section vidéo -->
+      <section class="project-section">
+        <div class="video-container">
+          <iframe
+          src="https://www.youtube.com/embed/hqbmKtal_ac"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        </div>
+      </section>
+
+      <!-- Bouton vers YouTube -->
+      <div class="btn-container">
+        <a
+          href="https://www.youtube.com/watch?v=hqbmKtal_ac"
+          target="_blank"
+          class="hero"
+          >Regarder sur YouTube</a
+        >
+      </div>
+      <div class="navigation-buttons">
+        <a href="Les Dangers des Jeux Vidéo.html" class="back-button hero">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          Page Précédent
+        </a>
+        <a href="Les Dangers des Jeux Vidéo.html" class="next-button hero">
+          Projet Suivant
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </main>
+
+   
+    <footer class="footer">
+      <div class="footer-content">
+        <header>
+          <a href="#" class="logo">
+            <div class="logo-box">
+                <span>IG²</span>
+            </div>
+            <span>InfoGen</span><sup>²</sup>
+          </a>
+        </header>
+        <div>
+          <div class="footer-section">
+            <h3>À Propos</h3>
+            <p>InfoGen² – Un projet collaboratif des élèves de 2ᵉ année informatique,
+               explorant l’IA, la cybersécurité et la programmation 🚀...
+               Chaque élève y conçoit et présente son propre projet, rassemblé dans ce site web.</p>
+          </div>
+          <div class="footer-section">
+            <h3>Liens Rapides</h3>
+            <ul>
+              <li><a href="../index.html">Accueil</a></li>
+              <li><a href="../Sujets.html">Sujets</a></li>
+              <li><a href="../Contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Crédits</h3>
+            <ul>
+              <li><strong>Chef de projet :</strong>
+                <a href="https://www.instagram.com/real_jihed" target="_blank"> Jihed Khmili</a>
+              </li>
+              <li><strong>Assistant :</strong>
+                 <a href="https://www.instagram.com/rayen_zhaya" target="_blank">Mohamed Rayen Zhaya</a>
+              </li>
+              <li><strong>Assistant CSS 1 :</strong>
+                 <a href="https://www.instagram.com/oussama.msadak/" target="_blank">Oussema Msadak</a>
+              </li>
+              <li><strong>Assistant CSS 2:</strong>
+                 <a href="https://www.instagram.com/0marr_aloui" target="_blank">Mohamed Omar Aloui</a>
+              </li>
+            </ul>
+          </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> InfoGen². Tous droits réservés.</p>
+      </div>
+    </footer>
+    <script src="../Javascript/main.js"></script>
+  </body>
+</html>

@@ -23,6 +23,10 @@ window.addEventListener("load", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+  //Date
+  document.getElementById("current-year").textContent =
+    new Date().getFullYear();
+
   const themeToggle = document.querySelector(".switch");
   let isLightMode = localStorage.getItem("lightmode") === "enabled";
 

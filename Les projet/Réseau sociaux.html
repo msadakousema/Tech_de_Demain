@@ -35,12 +35,13 @@
         border-radius: 10px;
         overflow: hidden;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease;
+
       }
 
       .pros-card:hover,
       .cons-card:hover {
         transform: translateY(-5px);
+        box-shadow: var(--shadow-md);
       }
 
       .pros-header {
@@ -217,7 +218,7 @@
               <div class="project-info">
                 <h1>Les réseaux sociaux</h1>
                 <div class="metadata">
-                  <span class="student-name">Par: Mohamed Bououni</span>
+                  <span class="student-name">Par: Rayen Nourani</span>
                 </div>
               </div>
               <div class="header-buttons">
@@ -401,7 +402,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2025 InfoGen². Tous droits réservés.</p>
+          <p>&copy; <span id="current-year"></span> InfoGen². Tous droits réservés.</p>
         </div>
       </footer>
     </div>

@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Les Dangers des Jeux Vidéo</title>
+    <link rel="stylesheet" href="../CSS/styles.css" />
+    <link rel="stylesheet" href="../CSS/project.css" />
+    <link rel="icon" href="../Images/Icons/play.png" />
+  </head>
+  <body>
+    <div id="loader">
+      <svg xmlns="http://www.w3.org/2000/svg" height="200px" width="200px" viewBox="0 0 200 200" class="pencil">
+        <defs>
+          <clipPath id="pencil-eraser">
+            <rect height="30" width="30" ry="5" rx="5"></rect>
+          </clipPath>
+        </defs>
+        <circle transform="rotate(-113,100,100)" stroke-linecap="round" stroke-dashoffset="439.82" stroke-dasharray="439.82 439.82" stroke-width="2" stroke="currentColor" fill="none" r="70" class="pencil__stroke"></circle>
+        <g transform="translate(100,100)" class="pencil__rotate">
+          <g fill="none">
+            <circle transform="rotate(-90)" stroke-dashoffset="402" stroke-dasharray="402.12 402.12" stroke-width="30" stroke="hsl(223,90%,50%)" r="64" class="pencil__body1"></circle>
+            <circle transform="rotate(-90)" stroke-dashoffset="465" stroke-dasharray="464.96 464.96" stroke-width="10" stroke="hsl(223,90%,60%)" r="74" class="pencil__body2"></circle>
+            <circle transform="rotate(-90)" stroke-dashoffset="339" stroke-dasharray="339.29 339.29" stroke-width="10" stroke="hsl(223,90%,40%)" r="54" class="pencil__body3"></circle>
+          </g>
+          <g transform="rotate(-90) translate(49,0)" class="pencil__eraser">
+            <g class="pencil__eraser-skew">
+              <rect height="30" width="30" ry="5" rx="5" fill="hsl(223,90%,70%)"></rect>
+              <rect clip-path="url(#pencil-eraser)" height="30" width="5" fill="hsl(223,90%,60%)"></rect>
+              <rect height="20" width="30" fill="hsl(223,10%,90%)"></rect>
+              <rect height="20" width="15" fill="hsl(223,10%,70%)"></rect>
+              <rect height="20" width="5" fill="hsl(223,10%,80%)"></rect>
+              <rect height="2" width="30" y="6" fill="hsla(223,10%,10%,0.2)"></rect>
+              <rect height="2" width="30" y="13" fill="hsla(223,10%,10%,0.2)"></rect>
+            </g>
+          </g>
+          <g transform="rotate(-90) translate(49,-30)" class="pencil__point">
+            <polygon points="15 0,30 30,0 30" fill="hsl(33,90%,70%)"></polygon>
+            <polygon points="15 0,6 30,0 30" fill="hsl(33,90%,50%)"></polygon>
+            <polygon points="15 0,20 10,10 10" fill="hsl(223,10%,10%)"></polygon>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <nav class="navbar">
+      <div class="nav-content">
+        <a href="#" class="logo">
+          <div class="logo-box">
+              <span>IG²</span>
+          </div>
+          <span>InfoGen</span><sup>²</sup>
+      </a>
+        <section class="nav-links">
+          <div class="nav-icons">
+            <a href="../index.html">
+              <div class="animated">
+                <div class="fill-up">
+                  <div class="account">
+                    <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 64 64" width="96px" height="96px">
+                      <path d="M 32 8 C 31.08875 8 30.178047 8.3091875 29.435547 8.9296875 L 8.8007812 26.171875 C
+                      8.0357812 26.810875 7.7634844 27.925203 8.2714844 28.783203 C 8.9184844 29.875203 10.35025 30.088547
+                       11.28125 29.310547 L 31.677734 12.269531 C 31.864734 12.113531 32.135266 12.113531 32.322266
+                        12.269531 L 52.71875 29.3125 C 53.09275 29.6255 53.546047 29.777344 53.998047 29.777344
+                        C 54.693047 29.777344 55.382672 29.416656 55.763672 28.722656 C 56.228672 27.874656 55.954891
+                        26.803594 55.212891 26.183594 L 52 23.498047 L 52 15 C 52 13.895 51.105 13 50 13 L 48 13 C 46.895
+                        13 46 13.895 46 15 L 46 18.484375 L 34.564453 8.9296875 C 33.821953 8.3091875 32.91125 8 32 8 z
+                         M 32 16 L 12 32.705078 L 12 47 C 12 49.761 14.239 52 17 52 L 47 52 C 49.761 52 52 49.761 52 47
+                         L 52 32.705078 L 32 16 z M 28 32 L 36 32 C 37.105 32 38 32.895 38 34 L 38 48 L 26 48 L 26 34 C
+                         26 32.895 26.895 32 28 32 z"/></svg>
+                    </svg>
+                    <p class="text">Accueil</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="../Sujets.html">
+              <div class="animated">
+                <div class="fill-up">
+                  <div class="account">
+                    <svg class="stroke" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open h-4 w-4 mr-2" data-lov-id="src/components/Navbar.tsx:68:14" data-lov-name="BookOpen" data-component-path="src/components/Navbar.tsx" data-component-line="68" data-component-file="Navbar.tsx" data-component-name="BookOpen" data-component-content="%7B%22className%22%3A%22h-4%20w-4%20mr-2%22%7D"><path d="M12 7v14"></path><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path></svg>
+                    <p class="text">Sujets</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+            <a href="../Contact.html">
+              <div class="animated">
+                <div class="fill-up">
+                  <div class="account">
+                    <svg class="stroke" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail h-4 w-4 mr-2" data-lov-id="src/components/Navbar.tsx:79:14" data-lov-name="Mail" data-component-path="src/components/Navbar.tsx" data-component-line="79" data-component-file="Navbar.tsx" data-component-name="Mail" data-component-content="%7B%22className%22%3A%22h-4%20w-4%20mr-2%22%7D"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                    <p class="text">Contact</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+            <div class="side-nav">
+              <div>
+                <button class="switch" id="theme-toggle" aria-label="Toggle theme">
+                  <div class="circle"></div>
+                  <svg class="moon svg" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M223.5 32C100 32 0 132.3 0 256S100 480 223.5 480c60.6 0 115.5-24.2 155.8-63.4c5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6c-96.9 0-175.5-78.8-175.5-176c0-65.8 36-123.1 89.3-153.3c6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"></path>
+                  </svg>
+                  <div class="sun svg">
+                    <span class="dot"></span>
+                  </div>
+                </button>
+              </div>
+              <button class="toggle" aria-label="Toggle menu">
+                <div class="bars" id="bar1"></div>
+                <div class="bars" id="bar2"></div>
+                <div class="bars" id="bar3"></div>
+              </button>
+            </div>
+      </div>
+    </nav>
+    <main class="project-content">
+      <header class="project-header">
+        <div class="header-content">
+          <div class="project-info">
+            <h1>Les Dangers des Jeux Vidéo</h1>
+            <div class="metadata">
+              <span class="student-name">Par: Rayen Zhaya</span>
+            </div>
+          </div>
+          <div class="header-buttons">
+            <a href="../Sujets.html" class="back-button hero">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M19 12H5M12 19l-7-7 7-7" />
+              </svg>
+              Retour aux sujets
+            </a>
+          </div>
+        </div>
+      </header>
+        <section class="project-section">
+          <h2>Les dangers des jeux vidéo :</h2>
+          <p>
+            Les jeux vidéo peuvent être divertissants, mais ils comportent
+            également des risques qui peuvent affecter notre santé physique et
+            mentale. Voici quelques-uns de ces dangers :
+          </p>
+          </section>
+        <section class="project-section">
+  
+  <h2>Risques physiques :</h2>
+          <div class="topics-grid">
+            <div class="topic-card">
+              <ul>
+                <li>
+                  Rester assis longtemps peut causer des douleurs au dos et à la
+                  nuque.
+                </li>
+                <li>Fatigue oculaire due à l’exposition prolongée aux écrans.</li>
+                <li>Impact sur le sommeil à cause de sessions de jeu tardives.</li>
+              </ul>
+                        </div>
+            </div>
+        </section>
+
+        <section class="project-section">
+          <h2>Risques pour la santé mentale :</h2>
+          <div class="topics-grid">
+            <div class="topic-card">
+              <ul>
+                <li>
+                  L’addiction au jeu entraîne une perte de concentration sur d'autres
+                  activités.
+                </li>
+                <li>
+                  Augmentation du stress et de l’anxiété liés aux jeux violents ou
+                  compétitifs.
+                </li>
+                <li>
+                  Isolement social dû à une pratique excessive des jeux et à la
+                  négligence des relations réelles.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="project-section">
+          <h2>Tableau des risques liés aux jeux vidéo :</h2>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Risque</th>
+                  <th>Effets</th>
+                  <th>Conseils pour réduire les risques</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Fatigue oculaire</td>
+                  <td>Yeux rouges, maux de tête, vision floue</td>
+                  <td>Faire des pauses, ajuster l’éclairage de la pièce</td>
+                </tr>
+                <tr>
+                  <td>Addiction au jeu</td>
+                  <td>
+                    Isolement, baisse de productivité, perturbation de la vie
+                    quotidienne
+                  </td>
+                  <td>
+                    Limiter le temps de jeu, équilibrer avec d'autres activités
+                  </td>
+                </tr>
+                <tr>
+                  <td>Douleurs physiques</td>
+                  <td>Douleurs au cou, au dos, aux doigts</td>
+                  <td>
+                    Adopter une bonne posture, faire des pauses, pratiquer une
+                    activité physique
+                  </td>
+                </tr>
+                <tr>
+                  <td>Impact sur le sommeil</td>
+                  <td>Difficulté à dormir, troubles du sommeil</td>
+                  <td>
+                    Éviter de jouer avant de dormir, faire des pauses régulières
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="project-section">
+          <h2>Comment réduire les risques :</h2>
+          <p style="margin-bottom: .4rem;">
+            Il est important que les joueurs prennent conscience des risques
+            potentiels et prennent des mesures pour les limiter. Voici quelques
+            conseils utiles :
+          </p>
+          <div class="topics-grid">
+            <div class="topic-card">
+              <ul>
+                <li>Faire des pauses régulières pendant les sessions de jeu.</li>
+                <li>
+                  Limiter le temps passé à jouer et équilibrer avec d'autres
+                  activités.
+                </li>
+                <li>Veiller à un bon éclairage et adopter une bonne posture.</li>
+                <li>Maintenir une vie sociale en dehors du monde virtuel.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="project-section">
+          <h2>Impact des jeux violents sur les enfants :</h2>
+          <p>
+            De nombreuses préoccupations existent concernant l’effet des jeux
+            vidéo violents sur les enfants. Certaines études suggèrent qu'une
+            exposition prolongée à des jeux violents peut encourager des
+            comportements agressifs. Il est essentiel que les parents surveillent
+            les contenus auxquels leurs enfants sont exposés et veillent à ce
+            qu’ils soient adaptés à leur âge.
+          </p>
+        </section>
+        <div class="navigation-buttons">
+          <a href="Jeux vidéo Définition Dangers Création.html" class="back-button hero">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Page Précédent
+          </a>
+          <a href="Comment créer des jeux vidéo.html" class="next-button hero">
+            Page Suivant
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+    </main>
+
+    
+    <footer class="footer">
+      <div class="footer-content">
+        <header>
+          <a href="#" class="logo">
+            <div class="logo-box">
+                <span>IG²</span>
+            </div>
+            <span>InfoGen</span><sup>²</sup>
+          </a>
+        </header>
+        <div>
+          <div class="footer-section">
+            <h3>À Propos</h3>
+            <p>InfoGen² – Un projet collaboratif des élèves de 2ᵉ année informatique,
+               explorant l’IA, la cybersécurité et la programmation 🚀...
+               Chaque élève y conçoit et présente son propre projet, rassemblé dans ce site web.</p>
+          </div>
+          <div class="footer-section">
+            <h3>Liens Rapides</h3>
+            <ul>
+              <li><a href="../index.html">Accueil</a></li>
+              <li><a href="../Sujets.html">Sujets</a></li>
+              <li><a href="../Contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Crédits</h3>
+            <ul>
+              <li><strong>Chef de projet :</strong>
+                <a href="https://www.instagram.com/real_jihed" target="_blank"> Jihed Khmili</a>
+              </li>
+              <li><strong>Assistant :</strong>
+                 <a href="https://www.instagram.com/rayen_zhaya" target="_blank">Mohamed Rayen Zhaya</a>
+              </li>
+              <li><strong>Assistant CSS 1 :</strong>
+                 <a href="https://www.instagram.com/oussama.msadak/" target="_blank">Oussema Msadak</a>
+              </li>
+              <li><strong>Assistant CSS 2:</strong>
+                 <a href="https://www.instagram.com/0marr_aloui" target="_blank">Mohamed Omar Aloui</a>
+              </li>
+            </ul>
+          </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> InfoGen². Tous droits réservés.</p>
+      </div>
+    </footer>
+    <script src="../Javascript/main.js"></script>
+  </body>
+</html>
