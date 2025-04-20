@@ -1,30 +1,18 @@
 <!DOCTYPE html>
-<html lang="fr" dir="ltr">
+<html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dernières évolutions des appareils intelligents</title>
+    <title>العملة الرقمية</title>
     <link rel="stylesheet" href="../CSS/styles.css" />
+    <link rel="stylesheet" href="../CSS/sujets.css" />
     <link rel="stylesheet" href="../CSS/project.css" />
-    <link rel="icon" href="../../Images/Icons/robot icon.png" />
+    <link rel="icon" href="../Images/Icons/cryptocurrency.png" />
     <style>
-      .image-container{
-        width: 100%;
-        height: clamp(280px, calc(40vh + 15vw), 700px);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 1rem;
-        border-radius: 1.8rem;
-        background: var(--card-bg);
-        margin-block: 1rem 2rem;
-        position: relative;
-        overflow: hidden;
-        border: 1px solid var(--card-border);
-        backdrop-filter: blur(8px);
-        box-shadow: var(--shadow-md);
-        transition: transform 0.3s var(--easing), box-shadow 0.3s ease;
+       body {
+        padding-top: 0;
       }
+
     </style>
   </head>
   <body>
@@ -133,13 +121,20 @@
             </div>
       </div>
     </nav>
+    <nav class="filters">
+      <div class="filter-container language-switch">
+          <button class="filter-btn" onclick="setLanguage('ar')">🇸🇦 عربي</button>
+          <button class="filter-btn" onclick="setLanguage('fr')">🇫🇷 Français</button>
+          <button class="filter-btn" onclick="setLanguage('en')">🇬🇧 English</button>
+        </div>
+    </nav>
     <main class="project-content">
       <header class="project-header">
         <div class="header-content">
           <div class="project-info">
-            <h1>Dernières évolutions des appareils intelligents</h1>
+            <h1>👾 العملة الرقمية - Bitcoin و العالم الرقمي!</h1>
             <div class="metadata">
-              <span class="student-name">Par: Raslen Arfaoui</span>
+              <span class="student-name">Par: Mariem ben Saed</span>
               <span class="project-date">Présenté le : 13/02/2025</span>
             </div>
           </div>
@@ -158,173 +153,197 @@
               </svg>
               Retour aux sujets
             </a>
+            
           </div>
         </div>
       </header>
 
-          <section class="project-section">
-            <h2>Introduction au monde des appareils intelligents :</h2>
-            <p>
-              Les appareils intelligents évoluent très rapidement et deviennent une
-              partie importante de notre vie. Des téléphones aux montres connectées
-              en passant par les appareils électroménagers, cette technologie rend
-              notre vie plus facile et plus confortable. Grâce à l'intelligence
-              artificielle et à l'Internet des objets, les appareils sont devenus
-              plus intelligents et plus capables de nous aider dans nos tâches
-              quotidiennes.
-            </p>
-          </section>
-          <div class="image-container">
-            <img src="../Images/phone.jpg" alt="Smartphone" />
-            <img src="../Images/computer.jfif" alt="Appareil intelligent 2" />
-            <img
-              src="../Images/washing machine.jpg"
-              alt="Machine à laver intelligente"
-            />
+      <section class="project-section">
+        <h2
+          data-ar="ما هي العملة الرقمية؟"
+          data-fr="Qu'est-ce que la monnaie numérique ?"
+          data-en="What is digital currency?"
+        >
+          ما هي العملة الرقمية؟
+        </h2>
+        <p
+          data-ar="هي عملة إلكترونية تستخدم عبر الإنترنت مثل البيتكوين."
+          data-fr="C'est une monnaie électronique utilisée en ligne, comme le Bitcoin."
+          data-en="It's an electronic currency used online, like Bitcoin."
+        >
+          هي عملة إلكترونية تستخدم عبر الإنترنت مثل البيتكوين.
+        </p>
+      </section>
+      <section class="project-section">
+        <h2
+          data-ar="كيف بدأت؟"
+          data-fr="Comment ça a commencé ?"
+          data-en="How did it start?"
+        >
+          كيف بدأت؟
+        </h2>
+        <p
+          data-ar="بدأت بفكرة إنشاء وسيلة دفع لا مركزية بدون بنوك."
+          data-fr="L'idée était de créer un moyen de paiement décentralisé sans banques."
+          data-en="It started with the idea of creating a decentralized payment method without banks."
+        >
+          بدأت بفكرة إنشاء وسيلة دفع لا مركزية بدون بنوك.
+        </p>
+      </section>
+      <section class="project-section">
+        <h2
+          data-ar="كيف تطورت؟"
+          data-fr="Comment elle a évolué ?"
+          data-en="How has it evolved?"
+        >
+          كيف تطورت؟
+        </h2>
+        <p
+          data-ar="ظهرت آلاف العملات الجديدة وأصبحت تستخدم في الشراء والاستثمار."
+          data-fr="Des milliers de nouvelles monnaies sont apparues et sont utilisées pour les achats et investissements."
+          data-en="Thousands of new currencies appeared and are used for shopping and investing."
+        >
+          ظهرت آلاف العملات الجديدة وأصبحت تستخدم في الشراء والاستثمار.
+        </p>
+      </section>
+      <section class="project-section">
+        <h2
+          data-ar="إيجابيات وسلبيات"
+          data-fr="Avantages et inconvénients"
+          data-en="Pros and Cons"
+        >
+          إيجابيات وسلبيات
+        </h2>
+        <div class="topics-grid">
+          <div class="topic-card">
+            <ul>
+              <li
+                data-ar="✅ سريعة وآمنة"
+                data-fr="✅ Rapide et sécurisée"
+                data-en="✅ Fast and secure"
+              >
+                ✅ سريعة وآمنة
+              </li>
+              <li
+                data-ar="❌ تقلبات كبيرة في السعر"
+                data-fr="❌ Fortes fluctuations de prix"
+                data-en="❌ High price volatility"
+              >
+                ❌ تقلبات كبيرة في السعر
+              </li>
+            </ul>
           </div>
-          <section class="project-section">
-            <h2>Dernières évolutions dans les appareils intelligents :</h2>
-            <div class="topics-grid">
-              <div class="topic-card">
-                <ul class="features">
-                  <li>
-                    Téléphones intelligents : écrans pliables, caméras avancées, mémoire
-                    plus grande
-                  </li>
-                  <li>
-                    Appareils portables : montres intelligentes, lunettes intelligentes
-                  </li>
-                  <li>
-                    Maisons intelligentes : systèmes d’éclairage, de chauffage et de
-                    sécurité connectés
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </section>
-          <section class="project-section">
-            <h3>
-              Les entreprises les plus célèbres dans la production d'appareils
-              intelligents
-            </h3>
-            <div class="table-container">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Nom de l'entreprise</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Redmi</td></tr>
-                    <tr>
-                      <td>Infinix</td>
-                    </tr>
-                    <tr>
-                      <td>Apple</td>
-                    </tr>
-                    <tr>
-                      <td>Samsung</td>
-                    </tr>
-                </tbody>
-              </table>
-            </div>
-          </section>
-
-          <section class="project-section">
-            <h2>Intelligence artificielle et Internet des objets</h2>
-            <p>
-              Le rôle de l'intelligence artificielle dans l'amélioration des
-              performances des appareils intelligents. Exemples : assistants vocaux
-              comme Google Assistant, Siri. Internet des objets : comment les
-              appareils se connectent entre eux pour améliorer l'efficacité.
-              Exemples : climatiseurs intelligents, réfrigérateurs connectés.
-            </p>
-
-          </section>
-
-          <section class="project-section">
-            <h2>Prévisions futures :</h2>
-    
-            <p>
-              Dans le futur, on s’attend à ce que les appareils intelligents
-              deviennent encore plus avancés et mieux intégrés dans notre vie
-              quotidienne. Grâce aux progrès de l’intelligence artificielle et de
-              l’Internet des objets, nous verrons des appareils capables de mieux
-              comprendre nos besoins et d’offrir des solutions personnalisées. Par
-              exemple, les voitures autonomes pourraient devenir plus répandues, et
-              les appareils intelligents joueront un rôle plus important dans des
-              domaines comme la santé et l’éducation. De plus, la technologie
-              continuera d’améliorer l’efficacité énergétique et de réduire l’impact
-              environnemental, rendant notre vie plus durable.
-            </p>
-
-          </section>
-
-        <div class="navigation-buttons">
-          <a href="Maintenance des Ordinateurs.html" class="back-button hero">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M19 12H5M12 19l-7-7 7-7"/>
-            </svg>
-            Projet Précédent
-          </a>
-          <a href="Jeux Video.html" class="next-button hero">
-            Page Suivant
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </a>
         </div>
+      </section>
+      <section class="project-section">
+        <h2
+          data-ar="📺 فيديو شرح بسيط"
+          data-fr="📺 Vidéo explicative"
+          data-en="📺 Simple explanation video"
+        >
+          📺 فيديو شرح بسيط
+        </h2>
+        <div class="video-container">
+          <iframe 
+                src="https://drive.google.com/file/d/1h6xzZoXcqW88IDi3dN4MQNiSedpZIzrm/preview"
+                title="Cryptocurrency" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+      </section>
+      <div class="navigation-buttons">
+        <a href="Crypto.html" class="back-button hero">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          Projet Précédent
+        </a>
+        <a href="Système d'exploitation.html" class="next-button hero">
+          Projet Suivant
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
     </main>
 
-      <footer class="footer">
-        <div class="footer-content">
-          <header>
-            <a href="#" class="logo">
-              <div class="logo-box">
-                  <span>IG²</span>
-              </div>
-              <span>InfoGen</span><sup>²</sup>
-            </a>
-          </header>
-          <div>
-            <div class="footer-section">
-              <h3>À Propos</h3>
-              <p>InfoGen² – Un projet collaboratif des élèves de 2ᵉ année informatique,
-                 explorant l’IA, la cybersécurité et la programmation 🚀...
-                 Chaque élève y conçoit et présente son propre projet, rassemblé dans ce site web.</p>
+    <footer class="footer">
+      <div class="footer-content">
+        <header>
+          <a href="#" class="logo">
+            <div class="logo-box">
+                <span>IG²</span>
             </div>
-            <div class="footer-section">
-              <h3>Liens Rapides</h3>
-              <ul>
-                <li><a href="../index.html">Accueil</a></li>
-                <li><a href="../Sujets.html">Sujets</a></li>
-                <li><a href="../Contact.html">Contact</a></li>
-              </ul>
-            </div>
-            <div class="footer-section">
-              <h3>Crédits</h3>
-              <ul>
-                <li><strong>Chef de projet :</strong>
-                  <a href="https://www.instagram.com/real_jihed" target="_blank"> Jihed Khmili</a>
-                </li>
-                <li><strong>Assistant :</strong>
-                   <a href="https://www.instagram.com/rayen_zhaya" target="_blank">Mohamed Rayen Zhaya</a>
-                </li>
-                <li><strong>Assistant CSS 1 :</strong>
-                   <a href="https://www.instagram.com/oussama.msadak/" target="_blank">Oussema Msadak</a>
-                </li>
-                <li><strong>Assistant CSS 2:</strong>
-                   <a href="https://www.instagram.com/0marr_aloui" target="_blank">Mohamed Omar Aloui</a>
-                </li>
-              </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-          <p>&copy; <span id="current-year"></span> InfoGen². Tous droits réservés.</p>
-        </div>
-      </footer>
+            <span>InfoGen</span><sup>²</sup>
+          </a>
+        </header>
+        <div>
+          <div class="footer-section">
+            <h3>À Propos</h3>
+            <p>InfoGen² – Un projet collaboratif des élèves de 2ᵉ année informatique,
+               explorant l’IA, la cybersécurité et la programmation 🚀...
+               Chaque élève y conçoit et présente son propre projet, rassemblé dans ce site web.</p>
+          </div>
+          <div class="footer-section">
+            <h3>Liens Rapides</h3>
+            <ul>
+              <li><a href="../index.html">Accueil</a></li>
+              <li><a href="../Sujets.html">Sujets</a></li>
+              <li><a href="../Contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Crédits</h3>
+            <ul>
+              <li><strong>Chef de projet :</strong>
+                <a href="https://www.instagram.com/real_jihed" target="_blank"> Jihed Khmili</a>
+              </li>
+              <li><strong>Assistant :</strong>
+                 <a href="https://www.instagram.com/rayen_zhaya" target="_blank">Mohamed Rayen Zhaya</a>
+              </li>
+              <li><strong>Assistant CSS 1 :</strong>
+                 <a href="https://www.instagram.com/oussama.msadak/" target="_blank">Oussema Msadak</a>
+              </li>
+              <li><strong>Assistant CSS 2:</strong>
+                 <a href="https://www.instagram.com/0marr_aloui" target="_blank">Mohamed Omar Aloui</a>
+              </li>
+            </ul>
+          </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="current-year"></span> InfoGen². Tous droits réservés.</p>
+      </div>
+    </footer>
+    <script>
+      function setLanguage(lang) {
+        const elements = document.querySelectorAll('[data-' + lang + ']');
+        elements.forEach(el => {
+          el.innerText = el.getAttribute('data-' + lang);
+        });
+    
+        document.body.setAttribute('dir', lang === 'ar' ? 'rtl' : 'ltr');
+        localStorage.setItem('preferredLanguage', lang);
+    
+        // أضف أو أزل الكلاس active
+        document.querySelectorAll('.language-switch button').forEach(btn => {
+          btn.classList.remove('active');
+        });
+    
+        const activeBtn = document.querySelector(`.language-switch button[onclick*="${lang}"]`);
+        if (activeBtn) activeBtn.classList.add('active');
+      }
+    
+      // عند تحميل الصفحة
+      window.addEventListener('DOMContentLoaded', () => {
+        const savedLang = localStorage.getItem('preferredLanguage');
+        if (savedLang) {
+          setLanguage(savedLang);
+        } else {
+          setLanguage('ar'); // افتراضي: عربي
+        }
+      });
+    </script>
     <script src="../Javascript/main.js"></script>
-    <script src="../Javascript/carousel.js"></script>
   </body>
 </html>
